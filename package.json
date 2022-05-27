@@ -1,7 +1,11 @@
 {
   "name": "awesome-moviedb",
+  "description": "Movie database web application",
+  "author": "Alan Cleyton <alancleyton67@gmail.com>",
+  "repository": "git@github.com:alancleyton/awesome-moviedb.git",
+  "license": "MIT",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
