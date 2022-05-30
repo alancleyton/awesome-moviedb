@@ -14,7 +14,9 @@
     "plugin:jsx-a11y/recommended",
     "plugin:import/errors",
     "airbnb",
-    "prettier"
+    "prettier",
+    "plugin:testing-library/react",
+    "plugin:jest-dom/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -22,9 +24,19 @@
       "jsx": true
     },
     "ecmaVersion": "latest",
-    "sourceType": "module"
+    "sourceType": "module",
+    "project": "./tsconfig.json"
   },
-  "plugins": ["react", "@typescript-eslint", "react-hooks", "jsx-a11y", "import", "prettier"],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "react-hooks",
+    "jsx-a11y",
+    "import",
+    "prettier",
+    "testing-library",
+    "jest-dom"
+  ],
   "settings": {
     "react": {
       "version": "detect"
