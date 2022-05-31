@@ -51,4 +51,7 @@ export default {
     '[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$',
   ],
   moduleFileExtensions: ['tsx', 'ts', 'jsx', 'js', 'json'],
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+  },
 };
