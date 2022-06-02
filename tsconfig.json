@@ -19,8 +19,11 @@
     "paths": {
       "@/*": ["src/*"]
     },
+    "types": [
+      "node"
+    ]
   },
-  "include": ["src", "**/*.ts", "./config/tests/setup.ts"],
+  "include": ["src", "**/*.ts", "./tests/setup.ts"],
   "exclude": ["node_modules", "dist"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
