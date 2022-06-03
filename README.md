@@ -29,7 +29,13 @@ npm --version
   yarn install
 ```
 
-2. Run the project in locally on development mode.
+2. before run the project locally, add a `.env` file to the root of the project.
+```dosini
+VITE_APP_TMDB_BASE_URL=https://api.themoviedb.org
+VITE_APP_TMDB_API_KEY=your_own_generated_api_key
+```
+
+3. Run the project in locally on development mode.
 ```bash
   yarn dev
 ```
