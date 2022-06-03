@@ -41,9 +41,11 @@ VITE_APP_TMDB_API_KEY=your_own_generated_api_key
 ```
 
 # Running the tests
-Run all tests.
+Run tests options scripts.
 ```bash
-  yarn test
+  yarn test # run tests only once.
+  yarn test:watch # run tests in watch mode.
+  yarn test:coverage # run tests for coverage.
 ```
 
 # Lint and fix files

@@ -1,6 +1,6 @@
 {
   "src/**/*.{js,jsx,ts,tsx}": [
     "yarn lint",
-    "yarn test:ci"
+    "yarn test"
   ]
 }
