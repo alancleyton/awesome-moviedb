@@ -60,6 +60,7 @@
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "no-unused-vars": "off"
+    "no-unused-vars": "off",
+    "import/prefer-default-export": "off"
   }
 }
