@@ -6,6 +6,10 @@
   "license": "MIT",
   "private": true,
   "version": "0.0.1",
+  "engines": {
+    "node": ">=16",
+    "npm": ">=8"
+  },
   "scripts": {
     "dev": "vite --host",
     "build": "tsc -p tsconfig.build.json && vite build",
