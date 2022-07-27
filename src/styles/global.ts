@@ -20,7 +20,7 @@ export default createGlobalStyle<{ theme: ThemeType }>`
   body {
     min-height: 100vh;
     font-family: ${props => props.theme.font.roboto};
-    font-size: ${props => props.theme.fontSize.base};
+    font-size: 18px;
     font-weight: ${props => props.theme.fontWeight.heavy};
     color: ${props => props.theme.color.dark};
     background-color: ${props => props.theme.color.darkSlateBlue100};
