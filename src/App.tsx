@@ -1,5 +1,5 @@
 import { ThemeProvider } from 'styled-components';
-import { GlobalStyles, theme } from '@/styles';
+import { GlobalStyles, theme } from './styles';
 
 function App() {
   return (

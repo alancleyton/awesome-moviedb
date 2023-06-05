@@ -19,9 +19,7 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "types": [
-      "node"
-    ]
+    "types": []
   },
   "include": ["src", "**/*.ts", "./tests/setup.ts"],
   "exclude": ["node_modules", "dist"],
