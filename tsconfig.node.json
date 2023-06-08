@@ -10,5 +10,7 @@
     "./babel.config.js",
     "./jest-setup.ts",
     "./jest.config.ts",
+    "./tailwind.config.cjs",
+    "./postcss.config.cjs"
   ]
 }

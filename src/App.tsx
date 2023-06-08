@@ -1,14 +1,10 @@
-import { ThemeProvider } from 'styled-components';
-import { GlobalStyles, theme } from './styles';
+import React from 'react';
 
-function App() {
+function App(): JSX.Element {
   return (
-    <ThemeProvider theme={theme}>
-      <div>
-        <h2>Hello World!</h2>
-      </div>
-      <GlobalStyles />
-    </ThemeProvider>
+    <div>
+      <h2 className="text-3xl font-bold underline">Hello World!</h2>
+    </div>
   );
 }
 
