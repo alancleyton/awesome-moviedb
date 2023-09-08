@@ -1,11 +1,13 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import AppRoutes from '@/routes';
 
 function App(): JSX.Element {
   return (
     <div>
-      <h2 className="font-body font-regular text-medium leading-body text-dark">
-        Hello World!
-      </h2>
+      <BrowserRouter>
+        <AppRoutes />
+      </BrowserRouter>
     </div>
   );
 }
