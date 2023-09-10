@@ -1,13 +1,16 @@
 import { Routes, Route } from 'react-router-dom';
+import { Container } from '@/components/Container';
 
 const AppRoutes = (): JSX.Element => (
   <Routes>
     <Route
       path="/"
       element={
-        <div>
-          <h2>Home page</h2>
-        </div>
+        <Container>
+          <div>
+            <h2>Home page</h2>
+          </div>
+        </Container>
       }
     />
   </Routes>
