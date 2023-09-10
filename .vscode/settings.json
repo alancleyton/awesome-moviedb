@@ -9,5 +9,6 @@
   "search.exclude": {
     "**/node_modules": true,
     "**/dist": true,
-  }
+  },
+  "css.lint.unknownAtRules": "ignore"
 }
