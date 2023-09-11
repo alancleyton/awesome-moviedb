@@ -1,0 +1,21 @@
+name: AMDB CI
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  ci:
+    name: Continuos Integration
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Using Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.
+      - name: Install dependencies, run build and tests
+        run: |
+          yarn install
+          yarn build
+          yarn test
