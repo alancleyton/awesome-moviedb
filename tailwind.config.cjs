@@ -30,6 +30,7 @@ module.exports = {
       heading: 1.25,
     },
     spacing: {
+      hr: '1px',
       0: '0px',
       1: '2px',
       2: '4px',
@@ -44,6 +45,7 @@ module.exports = {
       11: '80px',
       12: '96px',
       13: '160px',
+      14: '280px',
     },
     colors: {
       white: '#ffffff',
@@ -83,6 +85,12 @@ module.exports = {
       red600: '#e38381',
       red300: '#f1c1c0',
       red100: '#faeaea',
+    },
+    screens: {
+      mobile: '640px',
+      tablet: '768px',
+      laptop: '1024px',
+      desktop: '1280px',
     },
   },
   plugins: [],
