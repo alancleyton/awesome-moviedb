@@ -3,6 +3,7 @@ export default {
   transform: {
     '^.+\\.(ts|tsx)?$': 'ts-jest',
     '^.+\\.(js|jsx)$': 'babel-jest',
+    '^.+\\.(jpg|jpeg|png|svg)$': '<rootDir>/test/fileTransformer.js',
   },
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/jest-setup.ts'],
