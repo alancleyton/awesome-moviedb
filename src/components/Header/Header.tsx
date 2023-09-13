@@ -1,48 +1,44 @@
 import React from 'react';
-import { Container } from '@/components/Container';
-import {
-  MdLocalMovies,
-  MdScreenshotMonitor,
-  MdGroups,
-  MdMenu,
-} from 'react-icons/md';
+import { Link } from 'react-router-dom';
+import * as MdIcon from 'react-icons/md';
+
 import logoBrand from '@/assets/images/logo-brand.png';
-import './Header.css';
+
+import { Container } from '@/components/Container';
+
+import './Header.scss';
 
 export const Header = (): JSX.Element => (
-  <header className="amdb-header">
+  <header className="amdb header">
     <Container>
-      <nav className="amdb-navigation">
-        <div className="amdb-navigation-logo">
-          <a className="amdb-logo" href="/">
+      <nav className="amdb navigation">
+        <div className="amdb navigation-logo">
+          <Link className="amdb logo" to="/">
             <img src={logoBrand} alt="logotipo" />
-          </a>
+          </Link>
         </div>
 
-        <div className="amdb-navigation-search">&nbsp;</div>
+        <div className="amdb navigation-search">&nbsp;</div>
 
-        <div className="amdb-navigation-items">
-          <a className="amdb-navigation-button" href="/movies">
-            <MdLocalMovies className="mr-3" size={24} />
+        <div className="amdb navigation-items colapsed">
+          <Link className="amdb navigation-button" to="/movies">
             Filmes
-          </a>
-          <a className="amdb-navigation-button" href="/shows">
-            <MdScreenshotMonitor className="mr-3" size={24} />
+          </Link>
+          <Link className="amdb navigation-button" to="/shows">
             Programas de TV
-          </a>
-          <a className="amdb-navigation-button" href="/peoples">
-            <MdGroups className="mr-3" size={24} />
+          </Link>
+          <Link className="amdb navigation-button" to="/peoples">
             Celebridades
-          </a>
+          </Link>
         </div>
 
-        <span className="amdb-navigation-separator">&nbsp;</span>
+        <span className="amdb navigation-separator">&nbsp;</span>
 
-        <div className="amdb-navigation-menu">
-          <a className="amdb-navigation-button" href=" ">
-            <MdMenu className="mr-3" size={24} />
+        <div className="amdb navigation-menu">
+          <button className="amdb navigation-button" type="button">
+            <MdIcon.MdMenu className="mr-3" size={24} />
             Menu
-          </a>
+          </button>
         </div>
       </nav>
     </Container>

@@ -1,0 +1,65 @@
+.amdb {
+  &.header {
+    @apply 
+    h-10 w-full
+    flex items-center 
+    bg-dark;
+  }
+
+  /* AMDB brand logo */
+  &.logo {
+    @apply
+    h-8 w-11
+    flex items-center justify-center
+    rounded bg-darkSlateBlue;
+  }
+
+  /* AMDB header navigation */
+  &.navigation {
+    @apply
+    flex items-center justify-between gap-6;
+
+    &-logo {
+      @apply
+      flex-1;
+    }
+
+    &-search {
+      @apply
+      flex-2;
+    }
+
+    &-items {
+      @apply
+      flex-2 flex items-center justify-end;
+
+      &.colapsed {
+        @apply
+        hidden;
+
+        @media (min-width: 768px) {
+          @apply
+          flex items-center justify-end;
+        }
+      }
+    }
+
+    &-separator {
+      @apply
+      block h-full w-hr
+      border border-solid border-dark600;
+    }
+
+    &-button {
+      @apply
+      py-2 px-4 mx-2
+      flex items-center
+      font-regular text-medium font-heading text-darkSlateBlue100
+      whitespace-nowrap rounded;
+      &:hover {
+        @apply
+        transition duration-300 ease-in-out bg-dark900;
+      } 
+    }
+  }
+}
