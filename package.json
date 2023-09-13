@@ -26,10 +26,13 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
+    "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
+    "postcss-nesting": "^12.0.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-icons": "^4.11.0",
     "react-router-dom": "^6.15.0",
+    "sass": "^1.66.1",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {

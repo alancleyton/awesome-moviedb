@@ -115,6 +115,7 @@
     "react-hooks/exhaustive-deps":"warn",
     "no-unused-vars":"off",
     "import/prefer-default-export":"off",
+    "@typescript-eslint/no-var-requires": "off",
     "react/function-component-definition":[
       2,
       {

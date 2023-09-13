@@ -10,5 +10,6 @@
     "**/node_modules": true,
     "**/dist": true,
   },
-  "css.lint.unknownAtRules": "ignore"
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore"
 }

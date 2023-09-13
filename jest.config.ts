@@ -9,7 +9,7 @@ export default {
   setupFilesAfterEnv: ['<rootDir>/jest-setup.ts'],
   moduleNameMapper: {
     '@/(.*)': '<rootDir>/src/$1',
-    '\\.(css|less)$': 'identity-obj-proxy',
+    '^.+\\.(css|less|scss)$': 'identity-obj-proxy',
   },
   clearMocks: true,
   testMatch: [
