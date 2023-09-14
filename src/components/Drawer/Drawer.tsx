@@ -3,18 +3,18 @@ import './Drawer.scss';
 
 type Props = {
   children: ReactNode;
-  isOpen: boolean;
-  setIsOpen: (arg: boolean) => void;
+  open: boolean;
+  onClose: (arg: boolean) => void;
 };
 
-export const Drawer: React.FC<Props> = ({ children, isOpen, setIsOpen }) => (
+export const Drawer: React.FC<Props> = ({ children, open, onClose }) => (
   <aside
-    className={`amdb drawer ${isOpen ? 'drawer-open' : 'drawer-close'}`}
+    className={`amdb drawer ${open ? 'drawer-open' : 'drawer-close'}`}
     data-testid="drawer-panel"
   >
     <div
       className={`amdb drawer-panel ${
-        isOpen ? 'drawer-panel-open' : 'drawer-panel-close'
+        open ? 'drawer-panel-open' : 'drawer-panel-close'
       }`}
     >
       {children}
@@ -25,7 +25,7 @@ export const Drawer: React.FC<Props> = ({ children, isOpen, setIsOpen }) => (
       role="presentation"
       data-testid="drawer-backdrop"
       onClick={() => {
-        setIsOpen(false);
+        onClose(false);
       }}
     />
   </aside>
