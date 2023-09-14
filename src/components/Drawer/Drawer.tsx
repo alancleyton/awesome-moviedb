@@ -9,11 +9,11 @@ type Props = {
 
 export const Drawer: React.FC<Props> = ({ children, open, onClose }) => (
   <aside
-    className={`amdb drawer ${open ? 'drawer-open' : 'drawer-close'}`}
+    className={`drawer ${open ? 'drawer-open' : 'drawer-close'}`}
     data-testid="drawer-panel"
   >
     <div
-      className={`amdb drawer-panel ${
+      className={`drawer-panel ${
         open ? 'drawer-panel-open' : 'drawer-panel-close'
       }`}
     >
@@ -21,7 +21,7 @@ export const Drawer: React.FC<Props> = ({ children, open, onClose }) => (
     </div>
 
     <div
-      className="amdb drawer-backdrop"
+      className="drawer-backdrop"
       role="presentation"
       data-testid="drawer-backdrop"
       onClick={() => {
