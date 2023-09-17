@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client';
-import './lib/tailwind.css';
+import './lib/tailwind.scss';
 
 import App from '@/App';
 
