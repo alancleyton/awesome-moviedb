@@ -7,26 +7,22 @@ type Props = {
   onClose: (arg: boolean) => void;
 };
 
-export const Drawer: React.FC<Props> = ({ children, open, onClose }) => (
-  <aside
-    className={`drawer ${open ? 'drawer-open' : 'drawer-close'}`}
-    data-testid="drawer-panel"
-  >
-    <div
-      className={`drawer-panel ${
-        open ? 'drawer-panel-open' : 'drawer-panel-close'
-      }`}
-    >
-      {children}
-    </div>
+export const Drawer: React.FC<Props> = ({ children, open, onClose }) => {
+  const drawerOpen = open ? 'drawer-open' : 'drawer-close';
+  const drawerPanelOpen = open ? 'drawer-panel-open' : 'drawer-panel-close';
+  const drawerBackdropOpacity = open ? 'bg-black bg-opacity-40' : '';
 
-    <div
-      className="drawer-backdrop"
-      role="presentation"
-      data-testid="drawer-backdrop"
-      onClick={() => {
-        onClose(false);
-      }}
-    />
-  </aside>
-);
+  return (
+    <div className={`drawer ${drawerOpen}`} data-testid="drawer-panel">
+      <div className={`drawer-panel ${drawerPanelOpen}`}>{children}</div>
+      <div
+        className={`drawer-backdrop ${drawerBackdropOpacity}`}
+        role="presentation"
+        data-testid="drawer-backdrop"
+        onClick={() => {
+          onClose(false);
+        }}
+      />
+    </div>
+  );
+};
