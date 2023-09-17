@@ -9,38 +9,36 @@ import { Container } from '@/components/Container';
 import './Header.scss';
 
 export const Header = (): JSX.Element => (
-  <header className="amdb header">
+  <nav className="navbar" role="presentation" aria-label="amdb navigation menu">
     <Container>
-      <nav className="amdb navigation">
-        <div className="amdb navigation-logo">
-          <Link className="amdb logo" to="/">
+      <div className="navbar-navigation">
+        <div className="navbar-navigation-brand">
+          <Link className="navbar-brand" to="/">
             <img src={logoBrand} alt="logotipo" />
           </Link>
         </div>
 
-        <div className="amdb navigation-search">&nbsp;</div>
+        <div className="navbar-navigation-search">&nbsp;</div>
 
-        <div className="amdb navigation-items colapsed">
-          <Link className="amdb navigation-button" to="/movies">
+        <div className="navbar-navigation-menu colapsed">
+          <Link className="navbar-navigation-menu-item" to="/movies">
             Filmes
           </Link>
-          <Link className="amdb navigation-button" to="/shows">
+          <Link className="navbar-navigation-menu-item" to="/shows">
             Programas de TV
           </Link>
-          <Link className="amdb navigation-button" to="/peoples">
+          <Link className="navbar-navigation-menu-item" to="/peoples">
             Celebridades
           </Link>
         </div>
 
-        <span className="amdb navigation-separator">&nbsp;</span>
+        <span className="navbar-separator">&nbsp;</span>
 
-        <div className="amdb navigation-menu">
-          <button className="amdb navigation-button" type="button">
-            <MdIcon.MdMenu className="mr-3" size={24} />
-            Menu
-          </button>
-        </div>
-      </nav>
+        <button className="navbar-navigation-menu-item" type="button">
+          <MdIcon.MdMenu className="mr-3" size={24} />
+          Menu
+        </button>
+      </div>
     </Container>
-  </header>
+  </nav>
 );

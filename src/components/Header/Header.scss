@@ -1,25 +1,26 @@
-.amdb {
-  &.header {
-    @apply 
-    h-10 w-full
-    flex items-center 
-    bg-dark;
-  }
+.navbar {
+  @apply 
+  h-10 w-full flex items-center bg-dark;
 
-  /* AMDB brand logo */
-  &.logo {
+  /* AMDB brand */
+  &-brand {
     @apply
     h-8 w-11
     flex items-center justify-center
     rounded bg-darkSlateBlue;
   }
 
-  /* AMDB header navigation */
-  &.navigation {
+  &-separator {
+    @apply
+    block h-full w-hr
+    border border-solid border-dark600;
+  }
+
+  &-navigation {
     @apply
     flex items-center justify-between gap-6;
 
-    &-logo {
+    &-brand {
       @apply
       flex-1;
     }
@@ -29,7 +30,7 @@
       flex-2;
     }
 
-    &-items {
+    &-menu {
       @apply
       flex-2 flex items-center justify-end;
 
@@ -42,24 +43,18 @@
           flex items-center justify-end;
         }
       }
-    }
 
-    &-separator {
-      @apply
-      block h-full w-hr
-      border border-solid border-dark600;
-    }
-
-    &-button {
-      @apply
-      py-2 px-4 mx-2
-      flex items-center
-      font-regular text-medium font-heading text-darkSlateBlue100
-      whitespace-nowrap rounded;
-      &:hover {
+      &-item {
         @apply
-        transition duration-300 ease-in-out bg-dark900;
-      } 
+        py-2 px-4 mx-2
+        flex items-center
+        font-regular text-medium font-heading text-darkSlateBlue100
+        whitespace-nowrap rounded;
+        &:hover {
+          @apply
+          transition duration-300 ease-in-out bg-dark900;
+        } 
+      }
     }
   }
 }
