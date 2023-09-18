@@ -1,0 +1,108 @@
+.button {
+  /* AMDB base button*/
+  @apply
+  inline-flex items-center
+  font-sans font-medium
+  leading-body text-center whitespace-nowrap
+  transition duration-300 ease-in-out
+  overflow-hidden
+  border border-solid border-transparent;
+
+  &:focus {
+    @apply
+    outline-none;
+  }
+
+  /* AMDB primary button*/
+  &-primary {
+    @apply
+    text-dark bg-yellow border-yellow;
+
+    &:hover:not(:disabled),
+    &:focus:not(:disabled) {
+      @apply
+      bg-yellow600 border-yellow600;
+    }
+
+    &:active:not(:disabled) {
+      @apply
+      bg-yellow900 border-yellow900;
+    }
+  }
+
+  /* AMDB secondary button*/
+  &-secondary {
+    @apply
+    text-white bg-darkSlateBlue border-darkSlateBlue;
+
+    &:hover:not(:disabled),
+    &:focus:not(:disabled) {
+      @apply
+      bg-darkSlateBlue900 border-darkSlateBlue900;
+    }
+
+    &:active:not(:disabled) {
+      @apply
+      bg-darkSlateBlue border-darkSlateBlue;
+    }
+  }
+
+  /* AMDB neutral button*/
+  &-neutral {
+    @apply
+    text-gray300 bg-dark border-dark;
+
+    &:hover:not(:disabled),
+    &:focus:not(:disabled) {
+      @apply
+      bg-dark900 border-dark900;
+    }
+
+    &:active:not(:disabled) {
+      @apply
+      bg-dark border-dark;
+    }
+  }
+
+  /* AMDB button sizes */
+  &-small {
+    @apply
+    py-2 px-4 text-medium font-medium rounded-md;
+  }
+
+  &-medium {
+    @apply
+    py-3 px-6 text-medium font-medium rounded-md;
+  }
+
+  &-large {
+    @apply
+    py-4 px-9 text-large font-medium rounded-md;
+  }
+
+  /* AMDB button modifiers */
+  &-block {
+    @apply
+    w-full;
+  }
+
+  &-rounded {
+    @apply
+    flex items-center justify-center rounded-full;
+
+    &.button-small {
+      @apply
+      p-0 h-8 w-8;
+    }
+
+    &.button-medium {
+      @apply
+      p-0 h-9 w-9;
+    }
+
+    &.button-large {
+      @apply
+      p-0 h-10 w-10;
+    }
+  }
+}

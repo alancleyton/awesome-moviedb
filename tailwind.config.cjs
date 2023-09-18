@@ -52,6 +52,7 @@ module.exports = {
       14: '280px',
     },
     colors: {
+      transparent: 'transparent',
       white: '#ffffff',
       black: '#000000',
       dark: '#161616',
