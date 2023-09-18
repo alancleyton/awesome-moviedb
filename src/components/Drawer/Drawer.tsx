@@ -1,4 +1,6 @@
 import React, { ReactNode } from 'react';
+import classNames from 'classnames';
+
 import './Drawer.scss';
 
 type Props = {
@@ -8,15 +10,28 @@ type Props = {
 };
 
 export const Drawer: React.FC<Props> = ({ children, open, onClose }) => {
-  const drawerOpen = open ? 'drawer-open' : 'drawer-close';
-  const drawerPanelOpen = open ? 'drawer-panel-open' : 'drawer-panel-close';
-  const drawerBackdropOpacity = open ? 'bg-black bg-opacity-40' : '';
+  const drawerClasses = classNames({
+    drawer: true,
+    'drawer-open': open,
+    'drawer-close': !open,
+  });
+
+  const drawerPanelClasses = classNames({
+    'drawer-panel': true,
+    'drawer-panel-open': open,
+    'drawer-panel-close': !open,
+  });
+
+  const drawerBackdropClasses = classNames({
+    'drawer-backdrop': true,
+    'bg-black bg-opacity-40': open,
+  });
 
   return (
-    <div className={`drawer ${drawerOpen}`} data-testid="drawer-panel">
-      <div className={`drawer-panel ${drawerPanelOpen}`}>{children}</div>
+    <div className={drawerClasses} data-testid="drawer-panel">
+      <div className={drawerPanelClasses}>{children}</div>
       <div
-        className={`drawer-backdrop ${drawerBackdropOpacity}`}
+        className={drawerBackdropClasses}
         role="presentation"
         data-testid="drawer-backdrop"
         onClick={() => {
