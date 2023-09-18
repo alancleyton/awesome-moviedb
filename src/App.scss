@@ -5,6 +5,10 @@
   box-border;
 }
 
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
 html, body {
   @apply
   p-0 m-0
