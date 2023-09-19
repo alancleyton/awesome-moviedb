@@ -1,5 +1,6 @@
 import React, { ReactNode, ButtonHTMLAttributes } from 'react';
-import classNames from 'classnames';
+
+import { cn } from '@/utils/cn';
 
 import './Button.scss';
 
@@ -13,37 +14,36 @@ type Props = {
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Button: React.FC<Props> = ({
+  className,
   children,
   variant,
   size,
   block,
   rounded,
-  className,
   ...rest
-}) => {
-  const buttonClasses = classNames({
-    button: true,
-    'button-primary': variant === 'primary',
-    'button-secondary': variant === 'secondary',
-    'button-neutral': variant === 'neutral',
-    'button-small': size === 'small',
-    'button-medium': size === 'medium',
-    'button-large': size === 'large',
-    'button-block': block,
-    'button-rounded': rounded,
-  });
-
-  return (
-    <button className={`${className} ${buttonClasses}`} {...rest}>
-      {children}
-    </button>
-  );
-};
+}) => (
+  <button
+    className={cn(
+      `${className} button`,
+      variant === 'primary' && 'button-primary',
+      variant === 'secondary' && 'button-secondary',
+      variant === 'neutral' && 'button-neutral',
+      size === 'small' && 'button-small',
+      size === 'medium' && 'button-medium',
+      size === 'large' && 'button-large',
+      block && 'button-block',
+      rounded && 'button-rounded',
+    )}
+    {...rest}
+  >
+    {children}
+  </button>
+);
 
 Button.defaultProps = {
+  className: '',
   variant: 'primary',
   size: 'medium',
   block: false,
   rounded: false,
-  className: '',
 };

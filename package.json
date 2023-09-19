@@ -28,13 +28,15 @@
   "dependencies": {
     "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
     "classnames": "^2.3.2",
+    "clsx": "^2.0.0",
     "postcss-nesting": "^12.0.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-icons": "^4.11.0",
     "react-router-dom": "^6.15.0",
     "sass": "^1.66.1",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "tailwind-merge": "^1.14.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.22.4",
