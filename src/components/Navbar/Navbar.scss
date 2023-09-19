@@ -42,18 +42,6 @@
           flex items-center justify-end;
         }
       }
-
-      &-item {
-        @apply
-        py-2 px-4 mx-2
-        flex items-center justify-center
-        font-regular text-medium font-heading text-darkSlateBlue100
-        whitespace-nowrap rounded;
-        &:hover {
-          @apply
-          transition duration-300 ease-in-out bg-dark900;
-        } 
-      }
     }
   }
 }

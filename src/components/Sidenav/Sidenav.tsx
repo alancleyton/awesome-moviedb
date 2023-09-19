@@ -1,6 +1,7 @@
 import React from 'react';
 import * as MdIcon from 'react-icons/md';
 
+import { Button } from '@/components/Button';
 import { Drawer } from '@/components/Drawer';
 
 import './Sidenav.scss';
@@ -18,13 +19,9 @@ export const Sidenav: React.FC<Props> = ({ menuOpen, onCloseMenu }) => (
       aria-label="amdb side navigation menu"
     >
       <div className="sidenav-header">
-        <button
-          className="sidenav-header-close-button"
-          type="button"
-          onClick={onCloseMenu}
-        >
+        <Button variant="neutral" rounded onClick={onCloseMenu}>
           <MdIcon.MdClose size={28} />
-        </button>
+        </Button>
       </div>
 
       <div className="sidenav-menu">
