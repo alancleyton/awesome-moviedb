@@ -67,17 +67,17 @@
   /* AMDB button sizes */
   &-small {
     @apply
-    py-2 px-4 text-medium font-medium rounded-md;
+    py-2 px-4 text-small font-semiBold rounded-md;
   }
 
   &-medium {
     @apply
-    py-3 px-6 text-medium font-medium rounded-md;
+    py-3 px-6 text-medium font-semiBold rounded-md;
   }
 
   &-large {
     @apply
-    py-4 px-9 text-large font-medium rounded-md;
+    py-4 px-9 text-large font-semiBold rounded-md;
   }
 
   /* AMDB button modifiers */
