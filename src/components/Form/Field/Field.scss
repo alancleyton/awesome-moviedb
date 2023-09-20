@@ -1,0 +1,25 @@
+.field {
+  @apply
+   relative h-7 w-full;
+
+  input {
+    @apply
+    py-2 px-6
+    h-full w-full
+    font-sans font-medium text-small text-dark text-ellipsis
+    border-2 border-solid border-transparent
+    transition duration-300 ease-in-out
+    bg-white rounded-md;
+
+    &::placeholder {
+      @apply
+      text-gray900;
+    }
+
+    &:hover,
+    &:focus {
+      @apply
+      border-yellow outline-none;
+    }
+  }
+}
