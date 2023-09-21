@@ -22,7 +22,7 @@
     "test:changed": "jest -o",
     "test:coverage:report": "jest --ci --maxWorkers=2 --collectCoverage",
     "test:coverage": "jest --coverage --colors",
-    "test:staged": "jest --ci --findRelatedTests",
+    "test:staged": "jest --ci",
     "test:watch": "jest --watch"
   },
   "dependencies": {
