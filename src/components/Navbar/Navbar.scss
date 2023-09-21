@@ -19,29 +19,23 @@
     @apply
     flex items-center justify-between gap-6;
 
-    &-brand {
-      @apply
-      flex-1;
-    }
-
     &-search {
       @apply
-      flex-2;
+      flex-3;
     }
 
     &-menu {
       @apply
       flex-2 flex items-center justify-end;
+    }
+  }
 
-      &.colapsed {
-        @apply
-        hidden;
+  .colapsed {
+    @apply
+    hidden;
 
-        @media (min-width: 768px) {
-          @apply
-          flex items-center justify-end;
-        }
-      }
+    @media (min-width: 768px) {
+      display: inherit;
     }
   }
 }
