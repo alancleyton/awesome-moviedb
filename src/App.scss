@@ -19,7 +19,7 @@ html, body {
 body {
   @apply
   min-h-screen h-full
-  font-body font-medium text-medium text-white leading-body
+  font-body font-medium text-md text-white leading-body
   scroll-smooth antialiased overflow-hidden bg-dark900;
 }
 

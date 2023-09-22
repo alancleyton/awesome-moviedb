@@ -5,7 +5,7 @@ import * as MdIcon from 'react-icons/md';
 import logoBrand from '@/assets/images/logo-brand.png';
 
 import { Container } from '@/components/Container';
-import { Button } from '@/components/Button';
+import { Button } from '@/components/button';
 import { Field } from '@/components/Form/Field';
 
 import './Navbar.scss';
@@ -39,25 +39,27 @@ export const Navbar: React.FC<Props> = ({ onOpenMenu }): JSX.Element => (
         </div>
 
         <div className="navbar-navigation-menu colapsed">
-          <Button className="mx-3" variant="neutral" size="small">
+          <Button.Root className="mx-3" variant="secondary" size="sm">
             <Link to="/movies">Filmes</Link>
-          </Button>
+          </Button.Root>
 
-          <Button className="mx-3" variant="neutral" size="small">
+          <Button.Root className="mx-3" variant="secondary" size="sm">
             <Link to="/shows">Programas de TV</Link>
-          </Button>
+          </Button.Root>
 
-          <Button className="mx-3" variant="neutral" size="small">
+          <Button.Root className="mx-3" variant="secondary" size="sm">
             <Link to="/peoples">Celebridades</Link>
-          </Button>
+          </Button.Root>
         </div>
 
         <span className="navbar-separator colapsed">&nbsp;</span>
 
-        <Button variant="neutral" size="small" onClick={onOpenMenu}>
-          <MdIcon.MdMenu className="mr-3" size={24} />
+        <Button.Root variant="secondary" size="sm" onClick={onOpenMenu}>
+          <Button.Icon>
+            <MdIcon.MdMenu className="mr-3" size={24} />
+          </Button.Icon>
           Menu
-        </Button>
+        </Button.Root>
       </div>
     </Container>
   </nav>
