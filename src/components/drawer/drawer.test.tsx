@@ -7,11 +7,11 @@ import { Drawer } from '.';
 describe('Drawer', () => {
   it('should render the Drawer correctly', () => {
     render(
-      <Drawer.Root open data-testid="drawer">
+      <Drawer open data-testid="drawer">
         <Drawer.Content>
           <p>My drawer content</p>
         </Drawer.Content>
-      </Drawer.Root>,
+      </Drawer>,
     );
 
     const drawer = screen.getByTestId('drawer');
@@ -21,11 +21,11 @@ describe('Drawer', () => {
 
   it('should render the open Drawer', () => {
     render(
-      <Drawer.Root open data-testid="open-drawer">
+      <Drawer open data-testid="open-drawer">
         <Drawer.Content>
           <p>opned drawer</p>
         </Drawer.Content>
-      </Drawer.Root>,
+      </Drawer>,
     );
 
     const drawer = screen.getByTestId('open-drawer');
@@ -37,11 +37,11 @@ describe('Drawer', () => {
 
   it('should render the close Drawer', () => {
     render(
-      <Drawer.Root open={false} data-testid="close-drawer">
+      <Drawer open={false} data-testid="close-drawer">
         <Drawer.Content>
           <p>closed drawer</p>
         </Drawer.Content>
-      </Drawer.Root>,
+      </Drawer>,
     );
 
     const drawer = screen.getByTestId('close-drawer');
@@ -55,16 +55,12 @@ describe('Drawer', () => {
     const DrawerWrapper = () => {
       const [open, setOpen] = useState<boolean>(true);
       return (
-        <Drawer.Root
-          open={open}
-          onClose={() => setOpen(false)}
-          data-testid="drawer"
-        >
+        <Drawer open={open} onClose={() => setOpen(false)} data-testid="drawer">
           <Drawer.Content>
             <p>hello drawer</p>
           </Drawer.Content>
           <Drawer.Backdrop data-testid="drawer-backdrop" />
-        </Drawer.Root>
+        </Drawer>
       );
     };
 

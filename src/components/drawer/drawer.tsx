@@ -3,15 +3,16 @@ import React, { useMemo } from 'react';
 import { cn } from '@/utils/cn';
 
 import { DrawerContext } from './drawer-context';
-
+import { DrawerBackdrop } from './drawer-backdrop';
+import { DrawerContent } from './drawer-content';
 import { type DrawerProps } from './drawer-types';
 
-export const Drawer: React.FC<DrawerProps> = ({
+export const Drawer = ({
   children,
   open,
   onClose,
   ...rest
-}): JSX.Element => {
+}: DrawerProps): JSX.Element => {
   const drawerCtxValue = useMemo(() => ({ open, onClose }), [open, onClose]);
 
   return (
@@ -29,3 +30,6 @@ export const Drawer: React.FC<DrawerProps> = ({
     </DrawerContext.Provider>
   );
 };
+
+Drawer.Backdrop = DrawerBackdrop;
+Drawer.Content = DrawerContent;

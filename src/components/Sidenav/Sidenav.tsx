@@ -12,7 +12,7 @@ type Props = {
 };
 
 export const Sidenav: React.FC<Props> = ({ menuOpen, onCloseMenu }) => (
-  <Drawer.Root open={menuOpen} onClose={onCloseMenu}>
+  <Drawer open={menuOpen} onClose={onCloseMenu}>
     <Drawer.Content>
       <nav
         className="sidenav"
@@ -84,5 +84,5 @@ export const Sidenav: React.FC<Props> = ({ menuOpen, onCloseMenu }) => (
       </nav>
     </Drawer.Content>
     <Drawer.Backdrop />
-  </Drawer.Root>
+  </Drawer>
 );
