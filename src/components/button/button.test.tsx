@@ -6,7 +6,7 @@ import { Button } from '.';
 
 describe('Button', () => {
   it('should render the root Button correctly', () => {
-    render(<Button.Root>Submit</Button.Root>);
+    render(<Button>Submit</Button>);
 
     const button = screen.getByRole('button', { name: /submit/i });
 
@@ -14,7 +14,7 @@ describe('Button', () => {
   });
 
   it('should render the primary button by default', () => {
-    render(<Button.Root>Submit</Button.Root>);
+    render(<Button>Submit</Button>);
 
     const button = screen.getByRole('button', { name: /submit/i });
 
@@ -22,7 +22,7 @@ describe('Button', () => {
   });
 
   it('should render the button with the provided variant', () => {
-    render(<Button.Root variant="secondary">Submit</Button.Root>);
+    render(<Button variant="secondary">Submit</Button>);
 
     const button = screen.getByRole('button', { name: /submit/i });
 
@@ -30,7 +30,7 @@ describe('Button', () => {
   });
 
   it('should render the medium button by default', () => {
-    render(<Button.Root>Submit</Button.Root>);
+    render(<Button>Submit</Button>);
 
     const button = screen.getByRole('button', { name: /submit/i });
 
@@ -38,7 +38,7 @@ describe('Button', () => {
   });
 
   it('should render the button with the provided size', () => {
-    render(<Button.Root size="lg">Submit</Button.Root>);
+    render(<Button size="lg">Submit</Button>);
 
     const button = screen.getByRole('button', { name: /submit/i });
 
@@ -47,9 +47,9 @@ describe('Button', () => {
 
   it('Should render the button with the provided class names', () => {
     render(
-      <Button.Root className="my-class" size="lg">
+      <Button className="my-class" size="lg">
         Submit
-      </Button.Root>,
+      </Button>,
     );
 
     const button = screen.getByRole('button', { name: /submit/i });
@@ -61,9 +61,9 @@ describe('Button', () => {
 
   it('should render the rounded button', () => {
     render(
-      <Button.Root size="lg" rounded>
+      <Button size="lg" rounded>
         Submit
-      </Button.Root>,
+      </Button>,
     );
 
     const button = screen.getByRole('button', { name: /submit/i });
@@ -73,12 +73,12 @@ describe('Button', () => {
 
   it('should render the icon button', () => {
     render(
-      <Button.Root>
+      <Button>
         <Button.Icon>
           <MdIcon.MdArrowForward data-testid="button-icon" />
         </Button.Icon>
         Submit
-      </Button.Root>,
+      </Button>,
     );
 
     const button = screen.getByRole('button', { name: /submit/i });

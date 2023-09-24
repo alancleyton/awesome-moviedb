@@ -39,27 +39,27 @@ export const Navbar: React.FC<Props> = ({ onOpenMenu }): JSX.Element => (
         </div>
 
         <div className="navbar-navigation-menu colapsed">
-          <Button.Root className="mx-3" variant="secondary" size="sm">
+          <Button className="mx-3" variant="secondary" size="sm">
             <Link to="/movies">Filmes</Link>
-          </Button.Root>
+          </Button>
 
-          <Button.Root className="mx-3" variant="secondary" size="sm">
+          <Button className="mx-3" variant="secondary" size="sm">
             <Link to="/shows">Programas de TV</Link>
-          </Button.Root>
+          </Button>
 
-          <Button.Root className="mx-3" variant="secondary" size="sm">
+          <Button className="mx-3" variant="secondary" size="sm">
             <Link to="/peoples">Celebridades</Link>
-          </Button.Root>
+          </Button>
         </div>
 
         <span className="navbar-separator colapsed">&nbsp;</span>
 
-        <Button.Root variant="secondary" size="sm" onClick={onOpenMenu}>
+        <Button variant="secondary" size="sm" onClick={onOpenMenu}>
           <Button.Icon>
             <MdIcon.MdMenu className="mr-3" size={24} />
           </Button.Icon>
           Menu
-        </Button.Root>
+        </Button>
       </div>
     </Container>
   </nav>

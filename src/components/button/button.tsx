@@ -4,6 +4,7 @@ import { cva, VariantProps } from 'class-variance-authority';
 import { cn } from '@/utils/cn';
 
 import { type ButtonProps } from './button-types';
+import { ButtonIcon } from './button-icon';
 
 const buttonStyles = cva(
   cn(
@@ -46,9 +47,13 @@ const buttonStyles = cva(
   },
 );
 
-export const Button: React.FC<
-  ButtonProps & VariantProps<typeof buttonStyles>
-> = ({ children, variant, size, rounded, ...rest }): JSX.Element => (
+export const Button = ({
+  children,
+  variant,
+  size,
+  rounded,
+  ...rest
+}: ButtonProps & VariantProps<typeof buttonStyles>): JSX.Element => (
   <button
     {...rest}
     className={cn(buttonStyles({ size, variant, rounded }), rest.className)}
@@ -56,3 +61,5 @@ export const Button: React.FC<
     {children}
   </button>
 );
+
+Button.Icon = ButtonIcon;

@@ -20,11 +20,11 @@ export const Sidenav: React.FC<Props> = ({ menuOpen, onCloseMenu }) => (
         aria-label="amdb side navigation menu"
       >
         <div className="sidenav-header">
-          <Button.Root variant="secondary" rounded onClick={onCloseMenu}>
+          <Button variant="secondary" rounded onClick={onCloseMenu}>
             <Button.Icon>
               <MdIcon.MdClose size={28} />
             </Button.Icon>
-          </Button.Root>
+          </Button>
         </div>
 
         <div className="sidenav-menu">
