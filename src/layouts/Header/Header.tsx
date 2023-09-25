@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { Navbar } from '@/components/Navbar';
-import { Sidenav } from '@/components/Sidenav';
+import { Sidenav } from '@/components/sidenav';
 
 export const Header = (): JSX.Element => {
   const [toggleSideMenu, setToggleSideMenu] = useState<boolean>(false);
