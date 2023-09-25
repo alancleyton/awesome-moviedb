@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import { Container } from '@/components/Container';
+import { Container } from '@/components/container';
 
 const AppRoutes = (): JSX.Element => (
   <Routes>

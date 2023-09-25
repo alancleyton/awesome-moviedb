@@ -4,7 +4,7 @@ import * as MdIcon from 'react-icons/md';
 
 import logoBrand from '@/assets/images/logo-brand.png';
 
-import { Container } from '@/components/Container';
+import { Container } from '@/components/container';
 import { Button } from '@/components/button';
 import { Field } from '@/components/Form/Field';
 import { NavbarMenu } from './navbar-menu';
