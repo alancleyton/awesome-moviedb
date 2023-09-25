@@ -7,10 +7,7 @@ import { Drawer } from '@/components/drawer';
 import { SidenavMenu } from './sidenav-menu';
 import { type SidenavProps } from './sidenav-types';
 
-export const Sidenav = ({
-  menuOpen,
-  onCloseMenu,
-}: SidenavProps): JSX.Element => (
+export const Sidenav = ({ menuOpen, onCloseMenu }: SidenavProps) => (
   <Drawer open={menuOpen} onClose={onCloseMenu}>
     <Drawer.Content>
       <nav
@@ -27,7 +24,7 @@ export const Sidenav = ({
         </div>
 
         <SidenavMenu>
-          <SidenavMenu.Item className="mb-8">
+          <SidenavMenu.Group className="mb-8">
             <SidenavMenu.Title className="mb-4">
               <MdIcon.MdLocalMovies className="mr-4" size={24} />
               Filmes
@@ -39,9 +36,9 @@ export const Sidenav = ({
               <SidenavMenu.Link>Filmes em cartaz nos cinemas</SidenavMenu.Link>
               <SidenavMenu.Link>Próximas estreias nos cinemas</SidenavMenu.Link>
             </SidenavMenu.Links>
-          </SidenavMenu.Item>
+          </SidenavMenu.Group>
 
-          <SidenavMenu.Item className="mb-8">
+          <SidenavMenu.Group className="mb-8">
             <SidenavMenu.Title className="mb-4">
               <MdIcon.MdTv className="mr-4" size={24} />
               Programas de TV
@@ -53,9 +50,9 @@ export const Sidenav = ({
               <SidenavMenu.Link>Séries mais populares</SidenavMenu.Link>
               <SidenavMenu.Link>Próximas estreias de séries</SidenavMenu.Link>
             </SidenavMenu.Links>
-          </SidenavMenu.Item>
+          </SidenavMenu.Group>
 
-          <SidenavMenu.Item>
+          <SidenavMenu.Group>
             <SidenavMenu.Title className="mb-4">
               <MdIcon.MdPeople className="mr-4" size={24} />
               Celebridades
@@ -65,7 +62,7 @@ export const Sidenav = ({
               <SidenavMenu.Link>Celebridades nascidas hoje</SidenavMenu.Link>
               <SidenavMenu.Link>Celebridades mais populares</SidenavMenu.Link>
             </SidenavMenu.Links>
-          </SidenavMenu.Item>
+          </SidenavMenu.Group>
         </SidenavMenu>
       </nav>
     </Drawer.Content>
