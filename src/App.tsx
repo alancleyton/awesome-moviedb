@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import AppRoutes from '@/routes';
 import './App.scss';
 
-import { Header } from '@/layouts/Header';
+import { Header } from '@/layout/header';
 
 function App(): JSX.Element {
   return (
