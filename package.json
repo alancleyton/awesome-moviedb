@@ -23,7 +23,8 @@
     "test:coverage:report": "jest --ci --maxWorkers=2 --collectCoverage",
     "test:coverage": "jest --coverage --colors",
     "test:staged": "jest --ci --findRelatedTests --passWithNoTests",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "generate:tailwind:css": "yarn tailwindcss -i ./src/app.css -o ./src/assets/css/index.css" 
   },
   "dependencies": {
     "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
