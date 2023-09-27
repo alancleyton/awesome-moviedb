@@ -11,7 +11,7 @@ const customRender = (
   const view = render(ui, { wrapper, ...options });
 
   const styles = document.createElement('style');
-  styles.innerHTML = fs.readFileSync('test/styles.css', 'utf8');
+  styles.innerHTML = fs.readFileSync('src/assets/css/index.css', 'utf8');
   document.head.appendChild(styles);
 
   return view;
