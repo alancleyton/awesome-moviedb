@@ -1,7 +1,7 @@
-import React from 'react';
-import { type ButtonIconProps } from './button-types';
+import React, { ComponentProps } from 'react';
 
-export const ButtonIcon: React.FC<ButtonIconProps> = ({
-  children,
-  ...rest
-}): JSX.Element => <div {...rest}>{children}</div>;
+type ButtonIconProps = ComponentProps<'div'>;
+
+export const ButtonIcon = ({ children, ...rest }: ButtonIconProps) => (
+  <div {...rest}>{children}</div>
+);

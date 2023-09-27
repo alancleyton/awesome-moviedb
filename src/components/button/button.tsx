@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 
 import { cn } from '@/utils/cn';
 
-import { type ButtonProps } from './button-types';
 import { ButtonIcon } from './button-icon';
 
 const buttonStyles = cva(
@@ -47,13 +46,16 @@ const buttonStyles = cva(
   },
 );
 
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
+  VariantProps<typeof buttonStyles>;
+
 export const Button = ({
   children,
   variant,
   size,
   rounded,
   ...rest
-}: ButtonProps & VariantProps<typeof buttonStyles>): JSX.Element => (
+}: ButtonProps) => (
   <button
     {...rest}
     className={cn(buttonStyles({ size, variant, rounded }), rest.className)}
