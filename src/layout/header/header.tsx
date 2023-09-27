@@ -1,16 +1,12 @@
 import { Link } from 'react-router-dom';
 import * as MdIcon from 'react-icons/md';
 
-import { Container } from '@/components/container';
-import { Menu } from '@/components/menu';
-import { Button } from '@/components/button';
-import { Drawer } from '@/components/drawer';
-import { Field } from '@/components/Form/Field';
+import { Container, Menu, Drawer, Field, Button } from '@/components';
 
 import logoBrand from '@/assets/images/logo-brand.png';
 import { useState } from 'react';
 
-export const Header = (): JSX.Element => {
+export const Header = () => {
   const [toggleDrawer, setToggleDrawer] = useState<boolean>(false);
   const onOpenDrawer = () => setToggleDrawer(true);
   const onCloseDrawer = () => setToggleDrawer(false);
