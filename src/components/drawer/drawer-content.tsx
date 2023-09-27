@@ -2,14 +2,10 @@ import React, { useContext } from 'react';
 
 import { cn } from '@/utils/cn';
 
-import { DrawerContentProps } from './drawer-types';
-
+import { type DrawerContentProps } from './drawer-types';
 import { DrawerContext } from './drawer-context';
 
-export const DrawerContent: React.FC<DrawerContentProps> = ({
-  children,
-  ...rest
-}): JSX.Element => {
+export const DrawerContent = ({ children, ...rest }: DrawerContentProps) => {
   const { open } = useContext(DrawerContext);
 
   return (

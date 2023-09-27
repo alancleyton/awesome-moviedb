@@ -2,17 +2,12 @@ import React, { useMemo } from 'react';
 
 import { cn } from '@/utils/cn';
 
+import { type DrawerProps } from './drawer-types';
 import { DrawerContext } from './drawer-context';
 import { DrawerBackdrop } from './drawer-backdrop';
 import { DrawerContent } from './drawer-content';
-import { type DrawerProps } from './drawer-types';
 
-export const Drawer = ({
-  children,
-  open,
-  onClose,
-  ...rest
-}: DrawerProps): JSX.Element => {
+export const Drawer = ({ children, open, onClose, ...rest }: DrawerProps) => {
   const drawerCtxValue = useMemo(() => ({ open, onClose }), [open, onClose]);
 
   return (

@@ -1,12 +1,11 @@
-import React, { useContext, ComponentProps } from 'react';
+import React, { useContext } from 'react';
 
 import { cn } from '@/utils/cn';
 
+import { type DrawerBackdropProps } from './drawer-types';
 import { DrawerContext } from './drawer-context';
 
-export const DrawerBackdrop: React.FC<ComponentProps<'div'>> = ({
-  ...rest
-}): JSX.Element => {
+export const DrawerBackdrop = ({ ...rest }: DrawerBackdropProps) => {
   const { open, onClose } = useContext(DrawerContext);
 
   return (
