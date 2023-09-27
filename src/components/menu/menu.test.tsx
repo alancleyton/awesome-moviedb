@@ -3,7 +3,6 @@ import { render, screen } from '@testing-library/react';
 
 import { Menu } from '.';
 
-// TODO: add collapse Menu Item test
 describe('Menu', () => {
   it('should render the Menu correctly', () => {
     render(
@@ -83,5 +82,19 @@ describe('Menu', () => {
     const menuItem = screen.getByTestId('menu-item');
 
     expect(menuItem).toHaveClass('w-full');
+  });
+
+  it('should render the Menu Item collapsed', () => {
+    render(
+      <Menu>
+        <Menu.Item filled collapse data-testid="menu-item">
+          Menu Item aligned to right
+        </Menu.Item>
+      </Menu>,
+    );
+
+    const menuItem = screen.getByTestId('menu-item');
+
+    expect(menuItem).toHaveClass('tablet:flex hidden');
   });
 });
