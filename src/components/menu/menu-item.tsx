@@ -1,7 +1,8 @@
-import React, { ComponentProps } from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 
 import { cn } from '@/utils/cn';
+
+import { type MenuItemProps } from './menu-types';
 
 const menuItemStyles = cva('inline-flex', {
   variants: {
@@ -29,7 +30,7 @@ export const MenuItem = ({
   filled,
   collapse,
   ...rest
-}: VariantProps<typeof menuItemStyles> & ComponentProps<'div'>) => (
+}: MenuItemProps & VariantProps<typeof menuItemStyles>) => (
   <div
     {...rest}
     className={cn(
