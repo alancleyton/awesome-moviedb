@@ -1,10 +1,9 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import * as MdIcon from 'react-icons/md';
 
+import { appImages } from '@/constants';
 import { Container, Menu, Drawer, Field, Button } from '@/components';
-
-import logoBrand from '@/assets/images/logo-brand.png';
-import { useState } from 'react';
 
 export const Header = () => {
   const [toggleDrawer, setToggleDrawer] = useState<boolean>(false);
@@ -19,7 +18,7 @@ export const Header = () => {
             <Menu.Item alignment="left" collapse>
               <Link to="/">
                 <figure className="h-7 w-11 flex items-center justify-center rounded bg-darkSlateBlue">
-                  <img src={logoBrand} alt="logotipo" />
+                  <img src={appImages.LOGO_BRAND_MD} alt="logotipo" />
                 </figure>
               </Link>
             </Menu.Item>
@@ -74,7 +73,10 @@ export const Header = () => {
 
       <Drawer open={toggleDrawer} onClose={onCloseDrawer}>
         <Drawer.Content>
-          <nav className="py-2 px-4 h-full w-full" role="navigation">
+          <nav
+            className="py-2 px-4 h-full w-full overflow-x-auto"
+            role="navigation"
+          >
             <div className="h-9 flex items-center mb-6">
               <Button variant="secondary" rounded onClick={onCloseDrawer}>
                 <Button.Icon>
