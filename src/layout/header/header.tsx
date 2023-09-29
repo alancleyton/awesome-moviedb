@@ -92,16 +92,16 @@ export const Header = () => {
                 </h4>
 
                 <ul className="flex flex-col items-start gap-4">
-                  <li className="font-regular text-md font-sans cursor-pointer ml-8 hover:underline">
+                  <li className="font-regular text-md font-sans text-gray300 hover:text-white cursor-pointer ml-8  hover:underline">
                     Buscar filmes por gênero
                   </li>
-                  <li className="font-regular text-md font-sans cursor-pointer ml-8 hover:underline">
+                  <li className="font-regular text-md font-sans text-gray300 hover:text-white cursor-pointer ml-8 hover:underline">
                     Filmes mais populares
                   </li>
-                  <li className="font-regular text-md font-sans cursor-pointer ml-8 hover:underline">
+                  <li className="font-regular text-md font-sans text-gray300 hover:text-white cursor-pointer ml-8 hover:underline">
                     Filmes em cartaz nos cinemas
                   </li>
-                  <li className="font-regular text-md font-sans cursor-pointer ml-8 hover:underline">
+                  <li className="font-regular text-md font-sans text-gray300 hover:text-white cursor-pointer ml-8 hover:underline">
                     Próximas estreias nos cinemas
                   </li>
                 </ul>
@@ -114,16 +114,16 @@ export const Header = () => {
                 </h4>
 
                 <ul className="flex flex-col items-start gap-4">
-                  <li className="font-regular text-md font-sans cursor-pointer ml-8 hover:underline">
+                  <li className="font-regular text-md font-sans text-gray300 hover:text-white cursor-pointer ml-8 hover:underline">
                     Buscar séries por gênero
                   </li>
-                  <li className="font-regular text-md font-sans cursor-pointer ml-8 hover:underline">
+                  <li className="font-regular text-md font-sans text-gray300 hover:text-white cursor-pointer ml-8 hover:underline">
                     Buscar séries no streaming
                   </li>
-                  <li className="font-regular text-md font-sans cursor-pointer ml-8 hover:underline">
+                  <li className="font-regular text-md font-sans text-gray300 hover:text-white cursor-pointer ml-8 hover:underline">
                     Séries mais populares
                   </li>
-                  <li className="font-regular text-md font-sans cursor-pointer ml-8 hover:underline">
+                  <li className="font-regular text-md font-sans text-gray300 hover:text-white cursor-pointer ml-8 hover:underline">
                     Próximas estreias de séries
                   </li>
                 </ul>
@@ -136,10 +136,10 @@ export const Header = () => {
                 </h4>
 
                 <ul className="flex flex-col items-start gap-4">
-                  <li className="font-regular text-md font-sans cursor-pointer ml-8 hover:underline">
+                  <li className="font-regular text-md font-sans text-gray300 hover:text-white cursor-pointer ml-8 hover:underline">
                     Celebridades nascidas hoje{' '}
                   </li>
-                  <li className="font-regular text-md font-sans cursor-pointer ml-8 hover:underline">
+                  <li className="font-regular text-md font-sans text-gray300 hover:text-white cursor-pointer ml-8 hover:underline">
                     Celebridades mais populares{' '}
                   </li>
                 </ul>
