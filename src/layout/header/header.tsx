@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import * as MdIcon from 'react-icons/md';
 
 import { appImages } from '@/constants';
-import { Container, Menu, Drawer, Field, Button } from '@/components';
+import { Container, Menu, Drawer, Input, Button } from '@/components';
 
 export const Header = () => {
   const [toggleDrawer, setToggleDrawer] = useState<boolean>(false);
@@ -24,17 +24,16 @@ export const Header = () => {
             </Menu.Item>
 
             <Menu.Item alignment="left" filled>
-              <Field
-                id="searchField"
-                type="text"
-                placeholder="Buscar filme, série ou pessoa"
-                icon={
-                  <MdIcon.MdSearch
-                    className="absolute top-2 right-3 text-gray900"
-                    size={24}
-                  />
-                }
-              />
+              <Input.Group>
+                <Input.Icon alignment="left">
+                  <MdIcon.MdSearch className="text-gray900" size={24} />
+                </Input.Icon>
+                <Input
+                  className="pl-7"
+                  type="text"
+                  placeholder="Busque filmes, séries de TV, celebridades, e mais..."
+                />
+              </Input.Group>
             </Menu.Item>
 
             <Menu.Item alignment="right" collapse>
