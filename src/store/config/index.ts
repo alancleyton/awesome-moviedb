@@ -7,18 +7,20 @@ import rootSagas from './root-sagas';
 /**
  * Creates a store config with reducers and sagas, returns a store
  */
-export const createStore = () => {
-  const sagaMiddlewareOptions = {};
+const sagaMiddlewareOptions = {};
 
-  const sagaMiddleware = createSagaMiddleware(sagaMiddlewareOptions);
+const sagaMiddleware = createSagaMiddleware(sagaMiddlewareOptions);
 
-  const store = configureStore({
-    reducer: rootReducers,
-    middleware: [sagaMiddleware],
-  });
+export const store = configureStore({
+  reducer: rootReducers,
+  middleware: [sagaMiddleware],
+});
 
-  // Run saga middleware to make redux-sagas work
-  sagaMiddleware.run(rootSagas);
+// Run saga middleware to make redux-sagas work
+sagaMiddleware.run(rootSagas);
 
-  return store;
-};
+// Infer the `RootState` and `AppDispatch` types from the store itself
+export type RootState = ReturnType<typeof store.getState>;
+
+// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
+export type AppDispatch = typeof store.dispatch;
