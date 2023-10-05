@@ -1,10 +1,13 @@
 import axios, { AxiosResponse } from 'axios';
 
+const headers = {
+  Authorization: `Bearer ${process.env.VITE_APP_TMDB_API_KEY}`,
+};
+
 const AXIOS = axios.create({
-  baseURL: 'https://api.themoviedb.org',
-  headers: {
-    Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1YTYyZGFkZjU0ZjBiYzYyNjI2YTA4MjNhNzMwNzQ5OCIsInN1YiI6IjVkNjhhNjkyY2E4MzU0NWU1N2Y2YTMyYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.h3RcfYunOHJBREfga-Lz18sTMLR0DksrTnr5zTVky6k`,
-  },
+  baseURL: process.env.VITE_APP_TMDB_BASE_URL,
+  timeout: 30000,
+  headers,
 });
 
 /**
