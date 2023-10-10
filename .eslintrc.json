@@ -1,11 +1,11 @@
 {
-  "env":{
-    "browser":true,
-    "node":true,
-    "es2021":true,
-    "jest":true
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2021": true,
+    "jest": true
   },
-  "extends":[
+  "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
@@ -18,19 +18,19 @@
     "plugin:testing-library/react",
     "plugin:jest-dom/recommended"
   ],
-  "parser":"@typescript-eslint/parser",
-  "parserOptions":{
-    "ecmaFeatures":{
-      "jsx":true
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "ecmaVersion":"latest",
-    "sourceType":"module",
-    "project":[
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": [
       "./tsconfig.json",
       "./tsconfig.node.json"
     ]
   },
-  "plugins":[
+  "plugins": [
     "react",
     "@typescript-eslint",
     "react-hooks",
@@ -40,27 +40,27 @@
     "testing-library",
     "jest-dom"
   ],
-  "settings":{
-    "react":{
-      "version":"detect"
+  "settings": {
+    "react": {
+      "version": "detect"
     },
-    "import/resolver":{
-      "node":{
-        "extensions":[
+    "import/resolver": {
+      "node": {
+        "extensions": [
           ".js",
           ".jsx",
           ".ts",
           ".tsx"
         ]
       },
-      "alias":{
-        "map":[
+      "alias": {
+        "map": [
           [
             "@",
             "./src"
           ]
         ],
-        "extensions":[
+        "extensions": [
           ".ts",
           ".tsx",
           ".js",
@@ -70,26 +70,27 @@
       }
     }
   },
-  "overrides":[
+  "overrides": [
     {
-      "files":[
+      "files": [
         "*.ts",
         "*.tsx"
       ],
-      "rules":{
+      "rules": {
         "no-undef":"off"
       }
     }
   ],
-  "rules":{
-    "prettier/prettier":"error",
-    "react/react-in-jsx-scope":"off",
-    "no-console":"off",
-    "@typescript-eslint/no-non-null-assertion":"off",
-    "react/jsx-filename-extension":[
+  "rules": {
+    "prettier/prettier": "error",
+    "react/react-in-jsx-scope": "off",
+    "no-console": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "react/jsx-filename-extension": [
       1,
       {
-        "extensions":[
+        "extensions": [
           ".js",
           ".jsx",
           ".ts",
@@ -97,38 +98,39 @@
         ]
       }
     ],
-    "import/extensions":[
+    "import/extensions": [
       "error",
       "ignorePackages",
       {
-        "ts":"never",
-        "tsx":"never"
+        "ts": "never",
+        "tsx": "never"
       }
     ],
-    "import/no-extraneous-dependencies":[
+    "import/no-extraneous-dependencies": [
       "error",
       {
-        "devDependencies":true
+        "devDependencies": true
       }
     ],
-    "react-hooks/rules-of-hooks":"error",
-    "react-hooks/exhaustive-deps":"warn",
-    "no-unused-vars":"off",
-    "import/prefer-default-export":"off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "no-unused-vars": "off",
+    "import/prefer-default-export": "off",
     "@typescript-eslint/no-var-requires": "off",
-    "react/function-component-definition":[
+    "react/function-component-definition": [
       2,
       {
-        "namedComponents":[
+        "namedComponents": [
           "arrow-function",
           "function-declaration"
         ],
-        "unnamedComponents":"arrow-function"
+        "unnamedComponents": "arrow-function"
       }
     ],
     "react/jsx-props-no-spreading": "off",
     "react/button-has-type": "off",
     "no-restricted-exports": "off",
-    "react/jsx-no-useless-fragment": "off"
+    "react/jsx-no-useless-fragment": "off",
+    "no-shadow": "off"
   }
 }

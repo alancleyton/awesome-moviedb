@@ -1,3 +1,5 @@
+import { PayloadAction } from '@reduxjs/toolkit';
+
 export interface Movie {
   adult: boolean;
   backdrop_path: string;
@@ -17,6 +19,14 @@ export interface Movie {
 
 export interface State {
   isLoading: boolean;
-  popularMovies: Movie[];
+  movies: Movie[];
   error: unknown | null;
 }
+
+export enum ActionTypes {
+  FETCH_MOVIES = 'movies/FETCH_MOVIES',
+  FETCH_MOVIES_SUCCESS = 'movies/FETCH_MOVIES_SUCCESS',
+  FETCH_MOVIES_FAILURE = 'movies/FETCH_MOVIES_FAILURE',
+}
+
+export type FetchMoviesPayloadAction = PayloadAction<{ query: string }>;

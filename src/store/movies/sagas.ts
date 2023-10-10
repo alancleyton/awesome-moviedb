@@ -1,23 +1,23 @@
 import { takeLatest, all, call, put } from 'redux-saga/effects';
 
 import { getApi } from '@/utils/api';
-import { fetchPopularMoviesSuccess, fetchPopularMoviesFailure } from './slice';
+import { fetchMoviesSuccess, fetchMoviesFailure } from './actions';
+import { ActionTypes, FetchMoviesPayloadAction } from './types';
 
-function* fetchPopularMovies() {
+function* fetchMovies(action: FetchMoviesPayloadAction) {
   try {
-    const { data } = yield call(
-      getApi,
-      '/3/movie/popular?language=pt-BR&page=1',
-    );
+    const { query } = action.payload;
 
-    yield put(fetchPopularMoviesSuccess(data.results));
+    const { data } = yield call(getApi, `/3/movie/popular${query}`);
+
+    yield put(fetchMoviesSuccess(data.results));
   } catch (error) {
-    fetchPopularMoviesFailure(error);
+    fetchMoviesFailure(error);
   }
 }
 
 function* moviesSagas() {
-  yield all([takeLatest('movies/fetchPopularMovies', fetchPopularMovies)]);
+  yield all([takeLatest(ActionTypes.FETCH_MOVIES, fetchMovies)]);
 }
 
 export default moviesSagas;
