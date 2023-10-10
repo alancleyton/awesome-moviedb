@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 
 import AppRoutes from '@/routes';
 import { store } from '@/store/config';
-import { Header } from '@/layout/header';
 import './app.css';
 
 function App(): JSX.Element {
@@ -12,7 +11,6 @@ function App(): JSX.Element {
     <div>
       <Provider store={store}>
         <BrowserRouter>
-          <Header />
           <AppRoutes />
         </BrowserRouter>
       </Provider>
