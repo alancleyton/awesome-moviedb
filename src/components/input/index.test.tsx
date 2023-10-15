@@ -3,7 +3,7 @@ import * as MdIcon from 'react-icons/md';
 
 import { Input } from './input';
 
-describe('Input', () => {
+describe('Input component', () => {
   it('should render the Input', () => {
     render(<Input type="text" placeholder="full name" data-testid="input" />);
 

@@ -4,7 +4,7 @@ import * as MdIcon from 'react-icons/md';
 
 import { Button } from '.';
 
-describe('Button', () => {
+describe('Button component', () => {
   it('should render the root Button correctly', () => {
     render(<Button>Submit</Button>);
 

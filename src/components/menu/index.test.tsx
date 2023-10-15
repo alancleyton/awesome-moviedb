@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 
 import { Menu } from '.';
 
-describe('Menu', () => {
+describe('Menu component', () => {
   it('should render the Menu correctly', () => {
     render(
       <Menu>

@@ -4,7 +4,7 @@ import user from '@testing-library/user-event';
 
 import { Drawer } from '.';
 
-describe('Drawer', () => {
+describe('Drawer component', () => {
   it('should render the Drawer correctly', () => {
     render(
       <Drawer open data-testid="drawer">

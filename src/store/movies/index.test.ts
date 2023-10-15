@@ -2,7 +2,7 @@ import moviesReducer, { initialState } from './reducers';
 import { fetchMovies, fetchMoviesSuccess, fetchMoviesFailure } from './actions';
 import * as moviesMock from './__mocks__';
 
-describe('store/movies', () => {
+describe('Movies store', () => {
   it('should initialize reducer with initialState', () => {
     const reducer = moviesReducer(initialState, { type: 'unknown' });
     expect(reducer).toBe(initialState);
