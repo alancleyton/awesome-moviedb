@@ -4,7 +4,7 @@ import { fetchMovies, fetchMoviesSuccess, fetchMoviesFailure } from './actions';
 
 import { State } from './types';
 
-const initialState: State = {
+export const initialState: State = {
   isLoading: false,
   movies: [],
   error: null,
@@ -28,7 +28,7 @@ const moviesReducer = createReducer(initialState, builder => {
     error: action.payload.error,
   }));
 
-  builder.addDefaultCase(() => {});
+  builder.addDefaultCase(state => state);
 });
 
 export default moviesReducer;
