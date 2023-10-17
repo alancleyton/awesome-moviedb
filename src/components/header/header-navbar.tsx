@@ -2,9 +2,11 @@ import { Link } from 'react-router-dom';
 import * as MdIcon from 'react-icons/md';
 
 import { appImages } from '@/constants';
-import { Container, Menu, Input, Button } from '@/components';
+import { Container, Menu, Button } from '@/components';
 
 import { HeaderNavbarProps } from './header-types';
+
+import { HeaderNavbarSearch } from './header-navbar-search';
 
 export const HeaderNavbar = ({ onOpen }: HeaderNavbarProps) => (
   <nav className="bg-dark" role="navigation">
@@ -19,16 +21,7 @@ export const HeaderNavbar = ({ onOpen }: HeaderNavbarProps) => (
         </Menu.Item>
 
         <Menu.Item alignment="left" filled>
-          <Input.Group>
-            <Input.Icon alignment="left">
-              <MdIcon.MdSearch className="text-gray900" size={24} />
-            </Input.Icon>
-            <Input
-              className="pl-7"
-              type="text"
-              placeholder="Busque filmes, séries de TV, celebridades, e mais..."
-            />
-          </Input.Group>
+          <HeaderNavbarSearch />
         </Menu.Item>
 
         <Menu.Item alignment="right" collapse>
