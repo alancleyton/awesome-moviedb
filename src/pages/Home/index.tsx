@@ -1,4 +1,5 @@
 import React, { useEffect, useCallback } from 'react';
+import { Button } from '@alancleyton67/awesome-ui';
 
 import { useAppDispatch, useAppSelector } from '@/hooks/useStore';
 import { fetchMovies } from '@/store/movies/actions';
@@ -19,6 +20,9 @@ const Home = () => {
   return (
     <div>
       <h2>Movies</h2>
+      <Button size="md" variant="secondary">
+        Awesome Ui
+      </Button>
 
       {isLoading ? (
         <p>Carregando...</p>

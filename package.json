@@ -7,8 +7,8 @@
   "private": true,
   "version": "0.0.1",
   "engines": {
-    "node": ">=16",
-    "npm": ">=8"
+    "node": ">=18",
+    "npm": ">=9"
   },
   "scripts": {
     "dev": "vite --host",
@@ -27,6 +27,7 @@
     "generate:tailwind:css": "yarn tailwindcss -i ./src/app.css -o ./src/assets/css/index.css"
   },
   "dependencies": {
+    "@alancleyton67/awesome-ui": "^0.7.3",
     "@reduxjs/toolkit": "^1.9.6",
     "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
     "axios": "^1.5.1",
