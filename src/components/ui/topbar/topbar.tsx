@@ -17,12 +17,17 @@ export const Topbar = ({ onOpenDrawer }: TopbarProps) => (
           </figure>
         </Navbar.Brand>
 
-        {/* search button, used to show hidden input at navbar bottom  */}
+        {/* navbar action buttons */}
         <Navbar.Nav>
           <Navbar.NavItems>
             <Navbar.NavItem>
-              <Button variant="secondary">
+              <Button className="px-3" variant="secondary">
                 <MdIcon.MdSearch className="text-gray900" size={24} />
+              </Button>
+            </Navbar.NavItem>
+            <Navbar.NavItem>
+              <Button className="px-3" variant="secondary">
+                PT
               </Button>
             </Navbar.NavItem>
           </Navbar.NavItems>
