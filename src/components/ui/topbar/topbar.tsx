@@ -22,7 +22,7 @@ export const Topbar = ({ onOpenDrawer }: TopbarProps) => (
           <Navbar.NavItems>
             <Navbar.NavItem>
               <Button className="px-3" variant="secondary">
-                <MdIcon.MdSearch className="text-gray900" size={24} />
+                <MdIcon.MdSearch size={24} />
               </Button>
             </Navbar.NavItem>
             <Navbar.NavItem>
