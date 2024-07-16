@@ -3,7 +3,11 @@ import * as MdIcon from 'react-icons/md';
 
 import { logoImages } from '@/constants/images';
 
-export const Topbar = () => (
+interface TopbarProps {
+  onOpenDrawer: () => void;
+}
+
+export const Topbar = ({ onOpenDrawer }: TopbarProps) => (
   <div id="amdbTopbar" className="amdb-topbar bg-gray-90">
     <div className="mx-auto w-full max-w-6xl">
       <Navbar.Root variant="secondary">
@@ -24,7 +28,7 @@ export const Topbar = () => (
           </Navbar.NavItems>
         </Navbar.Nav>
 
-        <Navbar.Toggler alignment="right">
+        <Navbar.Toggler alignment="right" onClick={onOpenDrawer}>
           <MdIcon.MdMenu size={24} />
         </Navbar.Toggler>
 
@@ -52,7 +56,7 @@ export const Topbar = () => (
         <Navbar.Nav collapse>
           <Navbar.NavItems>
             <Navbar.NavItem>
-              <Button variant="secondary">
+              <Button variant="secondary" onPress={onOpenDrawer}>
                 <MdIcon.MdMenu size={24} />
                 Menu
               </Button>
