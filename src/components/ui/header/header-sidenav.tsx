@@ -47,7 +47,7 @@ const SIDENAV_ITEMS = [
   },
   {
     title: 'Celebridades',
-    icon: <MdIcon.MdTv className="mr-4" size={24} />,
+    icon: <MdIcon.MdPeopleAlt className="mr-4" size={24} />,
     links: [
       {
         name: 'Celebridades populares',
@@ -100,7 +100,7 @@ const _HeaderSidenav = ({ windowSize }: HeaderSidenavProps) => {
                 <ul className="flex flex-col items-start gap-4">
                   {item.links.map(link => (
                     <li
-                      className="font-regular text-md font-sans text-gray-30 hover:text-white cursor-pointer ml-8  hover:underline"
+                      className="font-regular text-md font-sans text-gray-20 hover:text-white cursor-pointer ml-8  hover:underline"
                       key={link.name}
                     >
                       {link.name}

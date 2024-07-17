@@ -22,7 +22,7 @@ interface HeaderContextProps {
   onToggleDrawer: () => void;
 }
 
-export const HeaderContext = createContext<HeaderContextProps>({
+const HeaderContext = createContext<HeaderContextProps>({
   isSearchBarVisible: false,
   onToggleSearchBar: () => {},
   isDrawerOpen: false,
