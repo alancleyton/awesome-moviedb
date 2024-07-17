@@ -5,9 +5,15 @@ import { logoImages } from '@/constants/images';
 
 interface TopbarProps {
   onOpenDrawer: () => void;
+  onToggleSearchBar: () => void;
+  isSearchBarVisible: boolean;
 }
 
-export const Topbar = ({ onOpenDrawer }: TopbarProps) => (
+export const Topbar = ({
+  onOpenDrawer,
+  onToggleSearchBar,
+  isSearchBarVisible,
+}: TopbarProps) => (
   <div id="amdbTopbar" className="amdb-topbar bg-gray-90">
     <div className="mx-auto w-full max-w-6xl">
       <Navbar.Root variant="secondary">
@@ -21,8 +27,16 @@ export const Topbar = ({ onOpenDrawer }: TopbarProps) => (
         <Navbar.Nav>
           <Navbar.NavItems>
             <Navbar.NavItem>
-              <Button className="px-3" variant="secondary">
-                <MdIcon.MdSearch size={24} />
+              <Button
+                className="px-3"
+                variant="secondary"
+                onPress={onToggleSearchBar}
+              >
+                {isSearchBarVisible ? (
+                  <MdIcon.MdClose size={24} />
+                ) : (
+                  <MdIcon.MdSearch size={24} />
+                )}
               </Button>
             </Navbar.NavItem>
             <Navbar.NavItem>
