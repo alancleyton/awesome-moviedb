@@ -1,49 +1,76 @@
-import { useState } from 'react';
+import {
+  useState,
+  createContext,
+  useContext,
+  useMemo,
+  useCallback,
+} from 'react';
 import { Drawer } from '@alancleyton67/awesome-ui';
 
 import { withResize, WithResizeProps } from '../../../hoc/withResize';
 
-import { Topbar } from '../topbar';
-import { Sidenav } from '../sidenav';
-import { SearchBar } from '../../search/search-bar';
+import { HeaderNavbar } from './header-navbar';
+import { HeaderSidenav } from './header-sidenav';
+import { HeaderSearchBar } from './header-search-bar';
 
 type HeaderProps = WithResizeProps;
 
+interface HeaderContextProps {
+  isSearchBarVisible: boolean;
+  onToggleSearchBar: () => void;
+  isDrawerOpen: boolean;
+  onToggleDrawer: () => void;
+}
+
+export const HeaderContext = createContext<HeaderContextProps>({
+  isSearchBarVisible: false,
+  onToggleSearchBar: () => {},
+  isDrawerOpen: false,
+  onToggleDrawer: () => {},
+});
+
+export const useHeaderContext = () => useContext(HeaderContext);
+
 const _Header = ({ windowSize }: HeaderProps) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
   const [isSearchBarVisible, setIsSearchBarVisible] = useState<boolean>(false);
   const drawerSize = windowSize && windowSize <= 768 ? 'sm' : 'full';
 
-  const openDrawer = () => setIsOpen(true);
-
-  const closeDrawer = () => setIsOpen(false);
-
-  const toggleSearchBar = () => {
+  const onToggleSearchBar = useCallback(() => {
     setIsSearchBarVisible(!isSearchBarVisible);
-  };
+  }, [setIsSearchBarVisible, isSearchBarVisible]);
+
+  const onToggleDrawer = useCallback(() => {
+    setIsDrawerOpen(!isDrawerOpen);
+  }, [setIsDrawerOpen, isDrawerOpen]);
+
+  const contextValue = useMemo(
+    () => ({
+      isSearchBarVisible,
+      isDrawerOpen,
+      onToggleSearchBar,
+      onToggleDrawer,
+    }),
+    [isSearchBarVisible, isDrawerOpen, onToggleSearchBar, onToggleDrawer],
+  );
 
   return (
-    <header id="amdbHeader" className="amdb-header">
-      <Topbar
-        onOpenDrawer={openDrawer}
-        onToggleSearchBar={toggleSearchBar}
-        isSearchBarVisible={isSearchBarVisible}
-      />
-      <SearchBar
-        isVisible={isSearchBarVisible}
-        onCloseSearchBar={() => setIsSearchBarVisible(false)}
-      />
-      <Drawer.Root
-        open={isOpen}
-        onClose={closeDrawer}
-        placement="right"
-        size={drawerSize}
-      >
-        <Drawer.Content>
-          <Sidenav onCloseDrawer={closeDrawer} />
-        </Drawer.Content>
-      </Drawer.Root>
-    </header>
+    <HeaderContext.Provider value={contextValue}>
+      <header id="amdbHeader" className="amdb-header">
+        <HeaderNavbar />
+        <HeaderSearchBar />
+        <Drawer.Root
+          open={isDrawerOpen}
+          onClose={onToggleDrawer}
+          placement="right"
+          size={drawerSize}
+        >
+          <Drawer.Content>
+            <HeaderSidenav />
+          </Drawer.Content>
+        </Drawer.Root>
+      </header>
+    </HeaderContext.Provider>
   );
 };
 
