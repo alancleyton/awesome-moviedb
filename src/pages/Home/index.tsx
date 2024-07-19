@@ -19,7 +19,6 @@ const Home = () => {
   return (
     <div>
       <h2>Movies</h2>
-
       {isLoading ? (
         <p>Carregando...</p>
       ) : (

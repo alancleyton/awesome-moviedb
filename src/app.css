@@ -31,8 +31,8 @@ html, body {
 body {
   @apply
   min-h-screen h-full
-  font-body font-regular text-md text-dark leading-body
-  scroll-smooth antialiased overflow-hidden bg-darkSlateBlue100;
+  font-body font-regular text-md text-gray-90 leading-body
+  scroll-smooth antialiased overflow-hidden bg-slate-10;
 }
 
 ol, ul {

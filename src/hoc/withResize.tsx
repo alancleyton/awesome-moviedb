@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
+export interface WithResizeProps {
+  windowSize?: number;
+}
+
+/**
+ * HOC that listens to the window resize event.
+ * @param {ReactElement} ReactComponent - React component.
+ */
 export function withResize<P>(WrappedComponent: React.FC<P>) {
   return (props: P) => {
     const [windowSize, setWindowSize] = useState(window.innerWidth);
