@@ -44,7 +44,8 @@
     "redux-saga": "^1.2.3",
     "sass": "^1.66.1",
     "styled-components": "^5.3.5",
-    "tailwind-merge": "^1.14.0"
+    "tailwind-merge": "^1.14.0",
+    "use-debounce": "^10.0.1"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.22.4",

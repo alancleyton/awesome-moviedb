@@ -1,3 +1,5 @@
+import { useEffect, useCallback, useState, ChangeEvent } from 'react';
+import { useDebounce } from 'use-debounce';
 import { Input } from '@alancleyton67/awesome-ui';
 import * as MdIcon from 'react-icons/md';
 
@@ -5,25 +7,44 @@ interface SearchFormProps {
   onClose: () => void;
 }
 
-export const SearchForm = ({ onClose }: SearchFormProps) => (
-  <div id="searchForm" className="mx-auto w-full max-w-6xl p-4">
-    <form>
-      <Input.Root isFull variant="unstyled">
-        <Input.Group elementRight>
-          <Input.Field
-            id="searchField"
-            placeholder="Buscar Filmes, Séries e Celebridades"
-            name="query"
-          />
-          <Input.RightElement>
-            <MdIcon.MdClose
-              className="cursor-pointer"
-              size={24}
-              onClick={onClose}
+export const SearchForm = ({ onClose }: SearchFormProps) => {
+  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [debouncedSearchQuery] = useDebounce(searchQuery, 500);
+
+  const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const fetchSearchResults = useCallback((query: string) => {
+    // Todo: implement fetch search results function
+  }, []);
+
+  useEffect(() => {
+    if (debouncedSearchQuery) fetchSearchResults(debouncedSearchQuery);
+  }, [fetchSearchResults, debouncedSearchQuery]);
+
+  return (
+    <div id="searchForm" className="mx-auto w-full max-w-6xl p-4">
+      <form action="/search">
+        <Input.Root isFull variant="unstyled">
+          <Input.Group elementRight>
+            <Input.Field
+              id="searchField"
+              placeholder="Buscar Filmes, Séries e Celebridades"
+              name="query"
+              value={searchQuery}
+              onChange={handleOnChange}
             />
-          </Input.RightElement>
-        </Input.Group>
-      </Input.Root>
-    </form>
-  </div>
-);
+            <Input.RightElement>
+              <MdIcon.MdClose
+                className="cursor-pointer"
+                size={24}
+                onClick={onClose}
+              />
+            </Input.RightElement>
+          </Input.Group>
+        </Input.Root>
+      </form>
+    </div>
+  );
+};
