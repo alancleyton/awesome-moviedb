@@ -92,7 +92,7 @@ const _HeaderSidenav = ({ windowSize }: HeaderSidenavProps) => {
           <div className="flex items-start flex-wrap gap-10">
             {SIDENAV_ITEMS.map(item => (
               <div key={item.title}>
-                <h4 className="flex items-center font-semiBold text-lg font-heading text-yellow mb-4">
+                <h4 className="flex items-center font-semiBold text-xl font-oswald text-yellow mb-4">
                   {item.icon}
                   {item.title}
                 </h4>
@@ -100,7 +100,7 @@ const _HeaderSidenav = ({ windowSize }: HeaderSidenavProps) => {
                 <ul className="flex flex-col items-start gap-4">
                   {item.links.map(link => (
                     <li
-                      className="font-regular text-md font-sans text-gray-20 hover:text-white cursor-pointer ml-8  hover:underline"
+                      className="font-normal text-lg font-roboto text-gray-20 hover:text-white cursor-pointer ml-8  hover:underline"
                       key={link.name}
                     >
                       {link.name}
