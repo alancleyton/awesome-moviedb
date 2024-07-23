@@ -11,11 +11,14 @@ export const HeaderSearchBar = () => {
       id="amdbSearchBar"
       className={`${
         isSearchBarVisible ? 'absolute' : 'hidden'
-      } w-full bg-gray-90`}
+      } w-full bg-white`}
     >
       <div className="mx-auto w-full max-w-6xl p-4">
-        <Input.Root isFull variant="info">
-          <Input.Group elementRight>
+        <Input.Root isFull variant="unstyled">
+          <Input.Group elementLeft elementRight>
+            <Input.LeftElement>
+              <MdIcon.MdSearch className="text-gray-40" size={24} />
+            </Input.LeftElement>
             <Input.Field placeholder="Buscar Filmes, Séries e Celebridades" />
             <Input.RightElement>
               <MdIcon.MdClose
