@@ -127,6 +127,11 @@
     "no-restricted-exports": "off",
     "react/jsx-no-useless-fragment": "off",
     "no-shadow": "off",
-    "no-underscore-dangle": "off"
+    "no-underscore-dangle": "off",
+    "react/require-default-props": [
+      "error", {
+        "functions": "defaultArguments"
+      }
+    ]
   }
 }
