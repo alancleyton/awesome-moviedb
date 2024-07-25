@@ -25,7 +25,7 @@ html, body {
   @apply
   p-0 m-0
   w-full h-full
-  overflow-hidden;
+  overflow-auto;
 }
 
 body {

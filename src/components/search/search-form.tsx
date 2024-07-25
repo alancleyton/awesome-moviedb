@@ -1,4 +1,4 @@
-import { useEffect, useCallback, useState, ChangeEvent } from 'react';
+import { useEffect, useCallback, useState, useRef, ChangeEvent } from 'react';
 import { useDebounce } from 'use-debounce';
 import { Input } from '@alancleyton67/awesome-ui';
 import * as MdIcon from 'react-icons/md';
@@ -6,14 +6,11 @@ import * as MdIcon from 'react-icons/md';
 import { useAppDispatch } from '@/hooks/useStore';
 import { searchMovies } from '@/store/movies/actions';
 
-interface SearchFormProps {
-  onClose: () => void;
-}
-
-export const SearchForm = ({ onClose }: SearchFormProps) => {
+export const SearchForm = () => {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [debouncedSearchQuery] = useDebounce(searchQuery, 500);
   const dispatch = useAppDispatch();
+  const searchField = useRef<HTMLInputElement>(null);
 
   const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
@@ -26,8 +23,13 @@ export const SearchForm = ({ onClose }: SearchFormProps) => {
     [dispatch],
   );
 
+  const clearSearchQuery = () => {
+    setSearchQuery('');
+    searchField.current?.focus();
+  };
+
   useEffect(() => {
-    if (debouncedSearchQuery) fetchSearchResults(debouncedSearchQuery);
+    fetchSearchResults(debouncedSearchQuery);
   }, [fetchSearchResults, debouncedSearchQuery]);
 
   return (
@@ -36,6 +38,7 @@ export const SearchForm = ({ onClose }: SearchFormProps) => {
         <Input.Root isFull variant="unstyled">
           <Input.Group elementRight>
             <Input.Field
+              ref={searchField}
               id="searchField"
               placeholder="Buscar Filmes, Séries e Celebridades"
               name="query"
@@ -46,7 +49,7 @@ export const SearchForm = ({ onClose }: SearchFormProps) => {
               <MdIcon.MdClose
                 className="cursor-pointer"
                 size={24}
-                onClick={onClose}
+                onClick={clearSearchQuery}
               />
             </Input.RightElement>
           </Input.Group>
