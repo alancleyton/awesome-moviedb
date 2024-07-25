@@ -3,6 +3,9 @@ import { useDebounce } from 'use-debounce';
 import { Input } from '@alancleyton67/awesome-ui';
 import * as MdIcon from 'react-icons/md';
 
+import { useAppDispatch } from '@/hooks/useStore';
+import { searchMovies } from '@/store/movies/actions';
+
 interface SearchFormProps {
   onClose: () => void;
 }
@@ -10,14 +13,18 @@ interface SearchFormProps {
 export const SearchForm = ({ onClose }: SearchFormProps) => {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [debouncedSearchQuery] = useDebounce(searchQuery, 500);
+  const dispatch = useAppDispatch();
 
   const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
   };
 
-  const fetchSearchResults = useCallback((query: string) => {
-    // Todo: implement fetch search results function
-  }, []);
+  const fetchSearchResults = useCallback(
+    (query: string) => {
+      dispatch(searchMovies(query));
+    },
+    [dispatch],
+  );
 
   useEffect(() => {
     if (debouncedSearchQuery) fetchSearchResults(debouncedSearchQuery);
