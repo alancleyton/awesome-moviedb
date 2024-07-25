@@ -29,7 +29,10 @@ function* searchMovies(action: SearchMoviesPayloadAction) {
   try {
     const { query } = action.payload;
 
-    const { data } = yield call(getApi, `/3/search/movie?query=${query}`);
+    const { data } = yield call(
+      getApi,
+      `/3/search/movie?language=pt-BR&query=${query}`,
+    );
 
     yield put(searchMoviesSuccess(data.results));
   } catch (error) {
