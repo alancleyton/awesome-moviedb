@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loader should render correctly with children 1`] = `
+<div>
+  <h2>
+    loader
+  </h2>
+</div>
+`;
