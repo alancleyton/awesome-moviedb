@@ -3,7 +3,8 @@ import { useDebounce } from 'use-debounce';
 import { Input } from '@alancleyton67/awesome-ui';
 import * as MdIcon from 'react-icons/md';
 
-import { useAppDispatch } from '@/hooks/useStore';
+import { When } from '@/components/when';
+import { useAppDispatch, useAppSelector } from '@/hooks/useStore';
 import { searchMovies } from '@/store/movies/actions';
 import { cn } from '@/utils/cn';
 
@@ -17,6 +18,7 @@ export const SearchBar = ({ isVisible = false }: SearchBarProps) => {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [debouncedSearchQuery] = useDebounce(searchQuery, 500);
   const searchField = useRef<HTMLInputElement>(null);
+  const { searchResult } = useAppSelector(state => state.movies);
   const dispatch = useAppDispatch();
 
   const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -36,7 +38,7 @@ export const SearchBar = ({ isVisible = false }: SearchBarProps) => {
   };
 
   useEffect(() => {
-    fetchSearchResults(debouncedSearchQuery);
+    if (debouncedSearchQuery) fetchSearchResults(debouncedSearchQuery);
   }, [fetchSearchResults, debouncedSearchQuery]);
 
   return (
@@ -69,7 +71,9 @@ export const SearchBar = ({ isVisible = false }: SearchBarProps) => {
       </div>
 
       {/* search bar results suggestions */}
-      <SearchBarSuggestions />
+      <When condition={searchQuery && searchResult}>
+        <SearchBarSuggestions />
+      </When>
     </div>
   );
 };
