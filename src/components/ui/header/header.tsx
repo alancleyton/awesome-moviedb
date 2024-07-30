@@ -7,11 +7,11 @@ import {
 } from 'react';
 import { Drawer } from '@alancleyton67/awesome-ui';
 
-import { withResize, WithResizeProps } from '../../../hoc/withResize';
+import { SearchBar } from '@/components/search/search-bar';
+import { withResize, WithResizeProps } from '@/hoc/withResize';
 
 import { HeaderNavbar } from './header-navbar';
 import { HeaderSidenav } from './header-sidenav';
-import { HeaderSearchBar } from './header-search-bar';
 
 type HeaderProps = WithResizeProps;
 
@@ -58,7 +58,7 @@ const _Header = ({ windowSize }: HeaderProps) => {
     <HeaderContext.Provider value={contextValue}>
       <header id="amdbHeader" className="amdb-header">
         <HeaderNavbar />
-        <HeaderSearchBar />
+        <SearchBar isVisible={isSearchBarVisible} />
         <Drawer.Root
           open={isDrawerOpen}
           onClose={onToggleDrawer}

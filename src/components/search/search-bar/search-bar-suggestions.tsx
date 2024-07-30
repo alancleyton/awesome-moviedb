@@ -17,19 +17,9 @@ const MoviePost = ({ movie }: { movie: Movie }) => {
   return <MdIcon.MdMovie size={24} className="text-gray-10" />;
 };
 
-export const SearchSuggestions = () => {
+export const SearchBarSuggestions = () => {
   const { isSearching, searchResult } = useAppSelector(state => state.movies);
   const movieYear = (date: string) => date.split('-')[0];
-
-  // if (!searchResult.length) {
-  //   return (
-  //     <div className="flex justify-center items-center h-14">
-  //       <span className="block font-roboto font-normal text-md text-gray-50">
-  //         Nenhum resultado encontrado.
-  //       </span>
-  //     </div>
-  //   );
-  // }
 
   return (
     <Loader isLoading={isSearching}>
