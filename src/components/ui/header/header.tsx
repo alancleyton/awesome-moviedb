@@ -58,7 +58,7 @@ const _Header = ({ windowSize }: HeaderProps) => {
     <HeaderContext.Provider value={contextValue}>
       <header id="amdbHeader" className="amdb-header">
         <HeaderNavbar />
-        <SearchBar isVisible={isSearchBarVisible} />
+        <SearchBar />
         <Drawer.Root
           open={isDrawerOpen}
           onClose={onToggleDrawer}

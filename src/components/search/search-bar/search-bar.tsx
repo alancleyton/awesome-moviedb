@@ -3,6 +3,7 @@ import { useDebounce } from 'use-debounce';
 import { Input } from '@alancleyton67/awesome-ui';
 import * as MdIcon from 'react-icons/md';
 
+import { useHeaderContext } from '@/components/ui/header';
 import { When } from '@/components/when';
 import { useAppDispatch, useAppSelector } from '@/hooks/useStore';
 import { searchMovies } from '@/store/movies/actions';
@@ -10,16 +11,13 @@ import { cn } from '@/utils/cn';
 
 import { SearchBarSuggestions } from './search-bar-suggestions';
 
-interface SearchBarProps {
-  isVisible?: boolean;
-}
-
-export const SearchBar = ({ isVisible = false }: SearchBarProps) => {
+export const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [debouncedSearchQuery] = useDebounce(searchQuery, 500);
   const searchField = useRef<HTMLInputElement>(null);
   const { searchResult } = useAppSelector(state => state.movies);
   const dispatch = useAppDispatch();
+  const { isSearchBarVisible } = useHeaderContext();
 
   const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
@@ -44,7 +42,10 @@ export const SearchBar = ({ isVisible = false }: SearchBarProps) => {
   return (
     <div
       id="searchBar"
-      className={cn('w-full bg-white', isVisible ? 'absolute' : 'hidden')}
+      className={cn(
+        'w-full bg-white',
+        isSearchBarVisible ? 'absolute' : 'hidden',
+      )}
     >
       <div id="searchBarForm" className="mx-auto w-full max-w-6xl p-4">
         <form action="/search">
