@@ -1,10 +1,10 @@
 import * as MdIcon from 'react-icons/md';
-import { Button } from '@alancleyton67/awesome-ui';
+import { Button, Drawer } from '@alancleyton67/awesome-ui';
 
-import { logoImages } from '../../../constants/images';
-import { withResize, WithResizeProps } from '../../../hoc/withResize';
+import { logoImages } from '@/constants/images';
+import { withResize, WithResizeProps } from '@/hoc/withResize';
 
-import { useHeaderContext } from '.';
+import { useHeader } from '.';
 
 type HeaderSidenavProps = WithResizeProps;
 
@@ -60,59 +60,71 @@ const SIDENAV_ITEMS = [
 ];
 
 const _HeaderSidenav = ({ windowSize }: HeaderSidenavProps) => {
-  const { onToggleDrawer } = useHeaderContext();
+  const drawerSize = windowSize && windowSize <= 768 ? 'sm' : 'full';
+  const { isDrawerOpen, setDrawerOpen } = useHeader();
+
+  const closeDrawer = () => setDrawerOpen(false);
 
   return (
-    <aside
-      id="amdbHeaderSidenav"
-      className="amdb-header-sidenav w-full h-full bg-gray-90 overflow-auto"
+    <Drawer.Root
+      open={isDrawerOpen}
+      onClose={closeDrawer}
+      placement="right"
+      size={drawerSize}
     >
-      <div className="mx-auto w-full max-w-6xl py-8 px-4">
-        {/* sidenav header */}
-        <div className="flex items-center">
-          {windowSize && windowSize >= 768 && (
-            <a href="/" className="mr-auto">
-              <figure className="h-9 w-12 flex items-center justify-center rounded bg-slate">
-                <img src={logoImages.LOGO_BRAND_MD} alt="logotipo" />
-              </figure>
-            </a>
-          )}
+      <Drawer.Content>
+        <aside
+          id="amdbHeaderSidenav"
+          className="amdb-header-sidenav w-full h-full bg-gray-90 overflow-auto"
+        >
+          <div className="mx-auto w-full max-w-6xl py-8 px-4">
+            {/* sidenav header */}
+            <div className="flex items-center">
+              {windowSize && windowSize >= 768 && (
+                <a href="/" className="mr-auto">
+                  <figure className="h-9 w-12 flex items-center justify-center rounded bg-slate">
+                    <img src={logoImages.LOGO_BRAND_MD} alt="logotipo" />
+                  </figure>
+                </a>
+              )}
 
-          <Button
-            className="ml-auto"
-            variant="secondary"
-            onPress={onToggleDrawer}
-          >
-            <MdIcon.MdClose size={28} />
-          </Button>
-        </div>
+              <Button
+                className="ml-auto"
+                variant="secondary"
+                onPress={closeDrawer}
+              >
+                <MdIcon.MdClose size={28} />
+              </Button>
+            </div>
 
-        {/* sidenav items */}
-        <div className="mt-7">
-          <div className="flex items-start flex-wrap gap-10">
-            {SIDENAV_ITEMS.map(item => (
-              <div key={item.title}>
-                <h4 className="flex items-center font-semiBold text-xl font-oswald text-yellow mb-4">
-                  {item.icon}
-                  {item.title}
-                </h4>
+            {/* sidenav items */}
+            <div className="mt-7">
+              <div className="flex items-start flex-wrap gap-10">
+                {SIDENAV_ITEMS.map(item => (
+                  <div key={item.title}>
+                    <h4 className="flex items-center font-semiBold text-xl font-oswald text-yellow mb-4">
+                      {item.icon}
+                      {item.title}
+                    </h4>
 
-                <ul className="flex flex-col items-start gap-4">
-                  {item.links.map(link => (
-                    <li
-                      className="font-normal text-lg font-roboto text-gray-20 hover:text-white cursor-pointer ml-8  hover:underline"
-                      key={link.name}
-                    >
-                      {link.name}
-                    </li>
-                  ))}
-                </ul>
+                    <ul className="flex flex-col items-start gap-4">
+                      {item.links.map(link => (
+                        <li
+                          className="font-normal text-lg font-roboto text-gray-20 hover:text-white cursor-pointer ml-8  hover:underline"
+                          key={link.name}
+                        >
+                          {link.name}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
-        </div>
-      </div>
-    </aside>
+        </aside>
+      </Drawer.Content>
+    </Drawer.Root>
   );
 };
 

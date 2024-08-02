@@ -3,7 +3,7 @@ import { useDebounce } from 'use-debounce';
 import { Input } from '@alancleyton67/awesome-ui';
 import * as MdIcon from 'react-icons/md';
 
-import { useHeaderContext } from '@/components/ui/header';
+import { useHeader } from '@/components/ui/header';
 import { When } from '@/components/when';
 import { useAppDispatch, useAppSelector } from '@/hooks/useStore';
 import { searchMovies } from '@/store/movies/actions';
@@ -17,7 +17,7 @@ export const SearchBar = () => {
   const searchField = useRef<HTMLInputElement>(null);
   const { searchResult } = useAppSelector(state => state.movies);
   const dispatch = useAppDispatch();
-  const { isSearchBarVisible } = useHeaderContext();
+  const { isSearchBarVisible } = useHeader();
 
   const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
