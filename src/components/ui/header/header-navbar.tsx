@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Navbar, Button } from '@alancleyton67/awesome-ui';
 import * as MdIcon from 'react-icons/md';
 
@@ -30,10 +29,6 @@ export const HeaderNavbar = () => {
   const toggleSearchBar = () => setSearchBarVisible(!isSearchBarVisible);
 
   const toggleDrawer = () => setDrawerOpen(!isDrawerOpen);
-
-  useEffect(() => {
-    console.log('IS DRAWER OPEN', isDrawerOpen);
-  }, [isDrawerOpen]);
 
   return (
     <div id="amdbHeaderNavbar" className="amdb-header-navbar bg-gray-90">
