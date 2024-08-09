@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBar should render correctly 1`] = `
+<div>
+  <div
+    class="w-full bg-white hidden"
+    data-testid="searchBar"
+    id="searchBar"
+  >
+    <div
+      class="mx-auto w-full max-w-6xl p-4"
+      id="searchBarForm"
+    >
+      <form
+        action="/search"
+      >
+        <div
+          class="a-input"
+        >
+          <div
+            class="a-input-group a-flex a-relative a-h-fit a-w-full a-input-group-element-right"
+          >
+            <input
+              class="a-input-field a-inline-flex a-font-sans a-font-normal a-text-gray-90 placeholder:text-gray-60 a-text-ellipsis a-leading-body a-transition a-duration-300 a-ease-in-out a-outline-none a-rounded-sm a-ring-1 enabled:hover:a-ring-2 disabled:a-text-gray-30 disabled:a-ring-gray-10 disabled:a-cursor-not-allowed a-input-field-unstyled a-ring-transparent enabled:hover:a-ring-transparent enabled:focus:a-ring-0 enabled:focus:a-ring-transparent a-input-field-md a-h-8 a-py-3 a-px-5 a-text-md a-input-field-full a-w-full a-pr-8"
+              data-rac=""
+              data-testid="searchField"
+              id="searchField"
+              name="query"
+              placeholder="Buscar Filmes, Séries e Celebridades"
+              role="searchbox"
+              value=""
+            />
+            <div
+              class="a-input-right-element a-absolute a-w-fit a-top-1/2 -a-translate-y-1/2 a-right-5"
+            >
+              <svg
+                class="cursor-pointer"
+                fill="currentColor"
+                height="24"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 0h24v24H0z"
+                  fill="none"
+                />
+                <path
+                  d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;

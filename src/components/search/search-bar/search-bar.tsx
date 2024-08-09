@@ -42,6 +42,7 @@ export const SearchBar = () => {
   return (
     <div
       id="searchBar"
+      data-testid="searchBar"
       className={cn(
         'w-full bg-white',
         isSearchBarVisible ? 'absolute' : 'hidden',
@@ -54,6 +55,8 @@ export const SearchBar = () => {
               <Input.Field
                 ref={searchField}
                 id="searchField"
+                role="searchbox"
+                data-testid="searchField"
                 placeholder="Buscar Filmes, Séries e Celebridades"
                 name="query"
                 value={searchQuery}

@@ -1,21 +1,31 @@
-import { ReactNode, ReactElement } from 'react';
-import { render, RenderOptions } from '@testing-library/react';
-import * as fs from 'fs';
+import { ReactElement, ReactNode } from 'react';
+import { render } from '@testing-library/react';
+import type { RenderOptions } from '@testing-library/react';
+import { Provider } from 'react-redux';
 
-const wrapper = ({ children }: { children: ReactNode }) => <>{children}</>;
+import type { AppStore, RootState } from '@/store/config';
+import { setupStore } from '@/store/config';
 
-const customRender = (
+// This type interface extends the default options for render from RTL, as well
+// as allows the user to specify other things such as initialState, store.
+interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
+  preloadedState?: Partial<RootState>;
+  store?: AppStore;
+}
+
+export function renderWithProviders(
   ui: ReactElement,
-  options?: Omit<RenderOptions, 'wrapper'>,
-) => {
-  const view = render(ui, { wrapper, ...options });
+  {
+    preloadedState = {},
+    // Automatically create a store instance if no store was passed in
+    store = setupStore(preloadedState),
+    ...renderOptions
+  }: ExtendedRenderOptions = {},
+) {
+  function Wrapper({ children }: { children: ReactNode }) {
+    return <Provider store={store}>{children}</Provider>;
+  }
+  return { store, ...render(ui, { wrapper: Wrapper, ...renderOptions }) };
+}
 
-  const styles = document.createElement('style');
-  styles.innerHTML = fs.readFileSync('src/assets/css/index.css', 'utf8');
-  document.head.appendChild(styles);
-
-  return view;
-};
-
-export * from '@testing-library/react';
-export { customRender as render };
+export const flushPromises = () => new Promise(process.nextTick);

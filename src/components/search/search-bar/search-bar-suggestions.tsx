@@ -23,9 +23,10 @@ export const SearchBarSuggestions = () => {
 
   return (
     <Loader isLoading={isSearching}>
-      <ul id="suggestionsList">
+      <ul id="suggestionsList" role="listbox">
         {searchResult.map(movie => (
           <li
+            key={movie.title}
             id="suggestionsListItem"
             className="list-item hover:bg-gray-10 [&:not(:last-child)]:border-b border-solid border-gray-10"
           >

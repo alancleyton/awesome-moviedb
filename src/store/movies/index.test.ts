@@ -1,3 +1,4 @@
+import { moviesMock, errorMock } from '@/test-utils/__mocks__';
 import moviesReducer, { initialState } from './reducers';
 import {
   fetchMovies,
@@ -7,7 +8,6 @@ import {
   searchMoviesSuccess,
   searchMoviesFailure,
 } from './actions';
-import * as moviesMock from './__mocks__';
 
 describe('Movies store', () => {
   it('should initialize reducer with initialState', () => {
@@ -34,10 +34,10 @@ describe('Movies store', () => {
     const after = {
       ...before,
       isLoading: false,
-      movies: moviesMock.movies,
+      movies: moviesMock,
     };
 
-    const state = moviesReducer(before, fetchMoviesSuccess(moviesMock.movies));
+    const state = moviesReducer(before, fetchMoviesSuccess(moviesMock));
 
     expect(state).toStrictEqual(after);
   });
@@ -48,10 +48,10 @@ describe('Movies store', () => {
     const after = {
       ...before,
       isLoading: false,
-      error: moviesMock.error,
+      error: errorMock,
     };
 
-    const state = moviesReducer(before, fetchMoviesFailure(moviesMock.error));
+    const state = moviesReducer(before, fetchMoviesFailure(errorMock));
 
     expect(state).toStrictEqual(after);
   });
@@ -75,10 +75,10 @@ describe('Movies store', () => {
     const after = {
       ...before,
       isSearching: false,
-      searchResult: moviesMock.movies,
+      searchResult: moviesMock,
     };
 
-    const state = moviesReducer(before, searchMoviesSuccess(moviesMock.movies));
+    const state = moviesReducer(before, searchMoviesSuccess(moviesMock));
 
     expect(state).toStrictEqual(after);
   });
@@ -89,10 +89,10 @@ describe('Movies store', () => {
     const after = {
       ...before,
       isSearching: false,
-      error: moviesMock.error,
+      error: errorMock,
     };
 
-    const state = moviesReducer(before, searchMoviesFailure(moviesMock.error));
+    const state = moviesReducer(before, searchMoviesFailure(errorMock));
 
     expect(state).toStrictEqual(after);
   });
