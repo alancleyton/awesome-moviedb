@@ -25,13 +25,13 @@ html, body {
   @apply
   p-0 m-0
   w-full h-full
-  overflow-hidden;
+  overflow-auto;
 }
 
 body {
   @apply
   min-h-screen h-full
-  font-body font-regular text-md text-gray-90 leading-body
+  font-libre font-normal text-md text-gray-90 leading-body
   scroll-smooth antialiased overflow-hidden bg-slate-10;
 }
 

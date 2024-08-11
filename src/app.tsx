@@ -3,13 +3,13 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import AppRoutes from '@/routes';
-import { store } from '@/store/config';
+import { setupStore } from '@/store/config';
 import './app.css';
 
 function App(): JSX.Element {
   return (
     <div>
-      <Provider store={store}>
+      <Provider store={setupStore()}>
         <BrowserRouter>
           <AppRoutes />
         </BrowserRouter>

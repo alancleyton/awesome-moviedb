@@ -1,26 +1,32 @@
 import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 
-import rootReducers from './root-reducers';
+import rootReducer from './root-reducer';
 import rootSagas from './root-sagas';
+
+// Infer the `RootState` and `AppDispatch` types from the store itself
+export type RootState = ReturnType<typeof rootReducer>;
 
 /**
  * Creates a store config with reducers and sagas, returns a store
  */
-const sagaMiddlewareOptions = {};
+export function setupStore(preloadedState?: Partial<RootState>) {
+  const sagaMiddlewareOptions = {};
 
-const sagaMiddleware = createSagaMiddleware(sagaMiddlewareOptions);
+  const sagaMiddleware = createSagaMiddleware(sagaMiddlewareOptions);
 
-export const store = configureStore({
-  reducer: rootReducers,
-  middleware: [sagaMiddleware],
-});
+  const store = configureStore({
+    reducer: rootReducer,
+    middleware: [sagaMiddleware],
+    preloadedState,
+  });
 
-// Run saga middleware to make redux-sagas work
-sagaMiddleware.run(rootSagas);
+  // Run saga middleware to make redux-sagas work
+  sagaMiddleware.run(rootSagas);
 
-// Infer the `RootState` and `AppDispatch` types from the store itself
-export type RootState = ReturnType<typeof store.getState>;
+  return store;
+}
 
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
-export type AppDispatch = typeof store.dispatch;
+export type AppStore = ReturnType<typeof setupStore>;
+
+export type AppDispatch = AppStore['dispatch'];

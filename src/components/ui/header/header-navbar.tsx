@@ -3,7 +3,7 @@ import * as MdIcon from 'react-icons/md';
 
 import { logoImages } from '@/constants/images';
 
-import { useHeaderContext } from '.';
+import { useHeader } from '.';
 
 interface ToggleSearchBarButtonIconProps {
   isVisible: boolean;
@@ -19,8 +19,16 @@ const ToggleSearchBarButtonIcon = ({
 };
 
 export const HeaderNavbar = () => {
-  const { isSearchBarVisible, onToggleSearchBar, onToggleDrawer } =
-    useHeaderContext();
+  const {
+    isSearchBarVisible,
+    setSearchBarVisible,
+    isDrawerOpen,
+    setDrawerOpen,
+  } = useHeader();
+
+  const toggleSearchBar = () => setSearchBarVisible(!isSearchBarVisible);
+
+  const toggleDrawer = () => setDrawerOpen(!isDrawerOpen);
 
   return (
     <div id="amdbHeaderNavbar" className="amdb-header-navbar bg-gray-90">
@@ -39,7 +47,7 @@ export const HeaderNavbar = () => {
                 <Button
                   className="px-3"
                   variant="secondary"
-                  onPress={onToggleSearchBar}
+                  onPress={toggleSearchBar}
                 >
                   <ToggleSearchBarButtonIcon isVisible={isSearchBarVisible} />
                 </Button>
@@ -52,7 +60,7 @@ export const HeaderNavbar = () => {
             </Navbar.NavItems>
           </Navbar.Nav>
 
-          <Navbar.Toggler alignment="right" onClick={onToggleDrawer}>
+          <Navbar.Toggler alignment="right" onClick={toggleDrawer}>
             <MdIcon.MdMenu size={24} />
           </Navbar.Toggler>
 
@@ -80,7 +88,7 @@ export const HeaderNavbar = () => {
           <Navbar.Nav collapse>
             <Navbar.NavItems>
               <Navbar.NavItem>
-                <Button variant="secondary" onPress={onToggleDrawer}>
+                <Button variant="secondary" onPress={toggleDrawer}>
                   <MdIcon.MdMenu size={24} />
                   Menu
                 </Button>

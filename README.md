@@ -13,8 +13,8 @@
 
 # System Requirements
 * git >= 2.25.1
-* npm >= 8.5.5
-* node >= 16.15.0
+* npm >= 9.6.7
+* node >= 18.3.1
 
 Made sure to have the correct versions installed.
 ```shell

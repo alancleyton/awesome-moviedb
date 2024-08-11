@@ -106,12 +106,7 @@
         "tsx": "never"
       }
     ],
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": true
-      }
-    ],
+    "import/no-extraneous-dependencies": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "no-unused-vars": "off",
@@ -132,6 +127,11 @@
     "no-restricted-exports": "off",
     "react/jsx-no-useless-fragment": "off",
     "no-shadow": "off",
-    "no-underscore-dangle": "off"
+    "no-underscore-dangle": "off",
+    "react/require-default-props": [
+      "error", {
+        "functions": "defaultArguments"
+      }
+    ]
   }
 }
