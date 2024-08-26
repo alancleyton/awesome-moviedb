@@ -66,7 +66,7 @@ const _HeaderSidenav = ({ windowSize }: HeaderSidenavProps) => {
   const closeDrawer = () => setDrawerOpen(false);
 
   return (
-    <Drawer.Root
+    <Drawer
       open={isDrawerOpen}
       onClose={closeDrawer}
       placement="right"
@@ -124,7 +124,7 @@ const _HeaderSidenav = ({ windowSize }: HeaderSidenavProps) => {
           </div>
         </aside>
       </Drawer.Content>
-    </Drawer.Root>
+    </Drawer>
   );
 };
 

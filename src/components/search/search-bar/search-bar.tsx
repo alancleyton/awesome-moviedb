@@ -50,7 +50,7 @@ export const SearchBar = () => {
     >
       <div id="searchBarForm" className="mx-auto w-full max-w-6xl p-4">
         <form action="/search">
-          <Input.Root isFull variant="unstyled">
+          <Input isFull variant="unstyled">
             <Input.Group elementRight>
               <Input.Field
                 ref={searchField}
@@ -70,7 +70,7 @@ export const SearchBar = () => {
                 />
               </Input.RightElement>
             </Input.Group>
-          </Input.Root>
+          </Input>
         </form>
       </div>
 

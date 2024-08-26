@@ -33,7 +33,7 @@ export const HeaderNavbar = () => {
   return (
     <div id="amdbHeaderNavbar" className="amdb-header-navbar bg-gray-90">
       <div className="mx-auto w-full max-w-6xl">
-        <Navbar.Root variant="secondary">
+        <Navbar variant="secondary">
           <Navbar.Brand href="/">
             <figure className="h-7 w-11 flex items-center justify-center rounded bg-slate">
               <img src={logoImages.LOGO_BRAND_MD} alt="logotipo" />
@@ -95,7 +95,7 @@ export const HeaderNavbar = () => {
               </Navbar.NavItem>
             </Navbar.NavItems>
           </Navbar.Nav>
-        </Navbar.Root>
+        </Navbar>
       </div>
     </div>
   );

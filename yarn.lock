@@ -7,10 +7,10 @@
   resolved "https://registry.yarnpkg.com/@adobe/css-tools/-/css-tools-4.4.0.tgz#728c484f4e10df03d5a3acd0d8adcbbebff8ad63"
   integrity sha512-Ff9+ksdQQB3rMncgqDK78uLznstjyfIf2Arnh22pW8kBpLs6rpKDwgnZT46hin5Hl1WzazzK64DOrhSwYpS7bQ==
 
-"@alancleyton67/awesome-ui@^0.8.1":
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/@alancleyton67/awesome-ui/-/awesome-ui-0.8.1.tgz#3ba03d836ada706256012fdf5bde26bee8c86c51"
-  integrity sha512-mGZbVNAfN5MpfZIpLG5Ua3T5iIEJuEuaAHlFUFemRI0YlY1vKZSSalGd5z1aK43lX9mu0KTVUrwyYY/ZivKl2A==
+"@alancleyton67/awesome-ui@^0.10.1":
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/@alancleyton67/awesome-ui/-/awesome-ui-0.10.1.tgz#77a10cffe6a1fabda333244ff884053ee15bbc05"
+  integrity sha512-EpG3P0KSXmij63fB1AhQNjOd+1OfNwuVKaQI2F3rkw56DwRtnBZ2QH1QdgEacBFyM1c/nLyXHhcuwNg06+nOxA==
   dependencies:
     "@tailwindcss/nesting" "^0.0.0-insiders.565cd3e"
     class-variance-authority "^0.7.0"
