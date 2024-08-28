@@ -1,12 +1,9 @@
 import * as MdIcon from 'react-icons/md';
 import { Button, Drawer } from '@alancleyton67/awesome-ui';
 
+import { useHeader } from '@/components/ui/header';
 import { logoImages } from '@/constants/images';
 import { withResize, WithResizeProps } from '@/hoc/withResize';
-
-import { useHeader } from '.';
-
-type HeaderSidenavProps = WithResizeProps;
 
 const SIDENAV_ITEMS = [
   {
@@ -59,7 +56,7 @@ const SIDENAV_ITEMS = [
   },
 ];
 
-const _HeaderSidenav = ({ windowSize }: HeaderSidenavProps) => {
+const _Sidenav = ({ windowSize }: WithResizeProps) => {
   const drawerSize = windowSize && windowSize <= 768 ? 'sm' : 'full';
   const { isDrawerOpen, setDrawerOpen } = useHeader();
 
@@ -74,11 +71,10 @@ const _HeaderSidenav = ({ windowSize }: HeaderSidenavProps) => {
     >
       <Drawer.Content>
         <aside
-          id="amdbHeaderSidenav"
-          className="amdb-header-sidenav w-full h-full bg-gray-90 overflow-auto"
+          id="amdbSidenav"
+          className="amdb-sidenav w-full h-full bg-gray-90 overflow-auto"
         >
           <div className="mx-auto w-full max-w-6xl py-8 px-4">
-            {/* sidenav header */}
             <div className="flex items-center">
               {windowSize && windowSize >= 768 && (
                 <a href="/" className="mr-auto">
@@ -97,7 +93,6 @@ const _HeaderSidenav = ({ windowSize }: HeaderSidenavProps) => {
               </Button>
             </div>
 
-            {/* sidenav items */}
             <div className="mt-7">
               <div className="flex items-start flex-wrap gap-10">
                 {SIDENAV_ITEMS.map(item => (
@@ -128,4 +123,4 @@ const _HeaderSidenav = ({ windowSize }: HeaderSidenavProps) => {
   );
 };
 
-export const HeaderSidenav = withResize(_HeaderSidenav);
+export const Sidenav = withResize(_Sidenav);

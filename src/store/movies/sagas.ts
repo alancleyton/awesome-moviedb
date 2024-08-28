@@ -19,8 +19,6 @@ function* fetchMovies(action: FetchMoviesPayloadAction) {
 
     const { data } = yield call(getApi, `/3/movie/popular${query}`);
 
-    console.log('~DATA FROM SAGA', data);
-
     yield put(fetchMoviesSuccess(data.results));
   } catch (error) {
     fetchMoviesFailure(error);
