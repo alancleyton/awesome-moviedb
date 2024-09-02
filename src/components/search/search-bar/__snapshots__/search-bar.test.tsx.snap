@@ -26,7 +26,6 @@ exports[`SearchBar should render correctly 1`] = `
               data-testid="searchField"
               id="searchField"
               name="query"
-              placeholder="Buscar Filmes, Séries e Celebridades"
               role="searchbox"
               value=""
             />

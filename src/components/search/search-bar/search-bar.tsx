@@ -1,6 +1,7 @@
 import { useEffect, useCallback, useState, useRef, ChangeEvent } from 'react';
 import { useDebounce } from 'use-debounce';
 import { Input } from '@alancleyton67/awesome-ui';
+import { useTranslation } from 'react-i18next';
 import * as MdIcon from 'react-icons/md';
 
 import { useHeader } from '@/components/ui/header';
@@ -18,6 +19,7 @@ export const SearchBar = () => {
   const { searchResult } = useAppSelector(state => state.movies);
   const dispatch = useAppDispatch();
   const { isSearchBarVisible } = useHeader();
+  const { t } = useTranslation();
 
   const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
@@ -57,7 +59,7 @@ export const SearchBar = () => {
                 id="searchField"
                 role="searchbox"
                 data-testid="searchField"
-                placeholder="Buscar Filmes, Séries e Celebridades"
+                placeholder={t('search.search_bar.placeholder')}
                 name="query"
                 value={searchQuery}
                 onChange={handleOnChange}

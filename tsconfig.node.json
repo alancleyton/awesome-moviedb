@@ -6,6 +6,7 @@
     "allowSyntheticDefaultImports": true
   },
   "include": [
+    "./__mocks__/react-i18next.ts",
     "vite.config.ts",
     "./babel.config.js",
     "./jest-setup.ts",

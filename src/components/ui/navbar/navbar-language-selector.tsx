@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu } from '@alancleyton67/awesome-ui';
+import { useTranslation } from 'react-i18next';
 
 type Key = string | number;
 
@@ -15,10 +16,15 @@ const MenuItemRadio = ({ isSelected = false }: { isSelected?: boolean }) => (
 
 export const NavbarLanguageSelector = () => {
   const [selectedLanguage, setSelectedLanguage] = useState<Selection>(
-    new Set(['ptBR']),
+    new Set(['pt']),
   );
+  const { i18n } = useTranslation();
   const selectedLanguageValue = [...selectedLanguage].join(', ');
-  const labelValue = selectedLanguageValue === 'ptBR' ? 'PT' : 'EN';
+  const labelValue = selectedLanguageValue === 'pt' ? 'PT' : 'EN';
+
+  useEffect(() => {
+    i18n.changeLanguage(selectedLanguageValue);
+  }, [selectedLanguageValue, i18n]);
 
   return (
     <Menu
@@ -28,10 +34,10 @@ export const NavbarLanguageSelector = () => {
       variant="secondary"
       selectionMode="single"
       selectedKeys={selectedLanguage}
-      defaultSelectedKeys={['ptBR']}
+      defaultSelectedKeys={['pt']}
       onSelectionChange={setSelectedLanguage}
     >
-      <Menu.Item id="ptBR" className="flex items-center gap-3">
+      <Menu.Item id="pt" className="flex items-center gap-3">
         {({ isSelected }) => (
           <>
             <MenuItemRadio isSelected={isSelected} />
@@ -39,7 +45,7 @@ export const NavbarLanguageSelector = () => {
           </>
         )}
       </Menu.Item>
-      <Menu.Item id="enUS" className="flex items-center gap-3">
+      <Menu.Item id="en" className="flex items-center gap-3">
         {({ isSelected }) => (
           <>
             <MenuItemRadio isSelected={isSelected} />

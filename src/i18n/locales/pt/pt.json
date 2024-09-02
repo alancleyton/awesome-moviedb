@@ -1,0 +1,74 @@
+{
+  "header": {
+    "navbar": {
+      "items": [
+        {
+          "text": "Filmes"
+        },
+        {
+          "text": "Programas de TV"
+        },
+        {
+          "text": "Celebridades"
+        },
+        {
+          "text": "Menu"
+        }
+      ]
+    },
+    "sidenav": {
+      "items": [
+        {
+          "title": "Séries",
+          "links": [
+            {
+              "text": "Séries Populares"
+            },
+            {
+              "text": "Séries em exibição hoje"
+            },
+            {
+              "text": "Séries Na TV"
+            },
+            {
+              "text": "Séries mais bem avaliadas"
+            }
+          ]
+        },
+        {
+          "title": "Filmes",
+          "links": [
+            {
+              "text": "Filmes Populares"
+            },
+            {
+              "text": "Filmes em cartaz"
+            },
+            {
+              "text": "Próximas estreias"
+            },
+            {
+              "text": "Filmes mais bem avaliados"
+            }
+          ]
+        },
+        {
+          "title": "Celebridades",
+          "links": [
+            {
+              "text": "Celebridades populares"
+            },
+            {
+              "text": "Celebridades nascidas hoje"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "search": {
+    "search_bar": {
+      "placeholder": "Buscar Filmes, Séries e Celebridades"
+    }
+  }
+}

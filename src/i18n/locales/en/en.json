@@ -1,0 +1,74 @@
+{
+  "header": {
+    "navbar": {
+      "items": [
+        {
+          "text": "Movies"
+        },
+        {
+          "text": "Tv Shows"
+        },
+        {
+          "text": "Celebrities"
+        },
+        {
+          "text": "Menu"
+        }
+      ]
+    },
+    "sidenav": {
+      "items": [
+        {
+          "title": "Tv Shows",
+          "links": [
+            {
+              "text": "Most Popular Tv Shows"
+            },
+            {
+              "text": "Now on Playing"
+            },
+            {
+              "text": "TV & Streaming"
+            },
+            {
+              "text": "Most Rated Tv Shows"
+            }
+          ]
+        },
+        {
+          "title": "Movies",
+          "links": [
+            {
+              "text": "Most Popular Movies"
+            },
+            {
+              "text": "In Theaters Now"
+            },
+            {
+              "text": "Upcoming Movies"
+            },
+            {
+              "text": "Most Rated Movies"
+            }
+          ]
+        },
+        {
+          "title": "Celebrities",
+          "links": [
+            {
+              "text": "Most Popular Celebrities"
+            },
+            {
+              "text": "Celebrities Born Today"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "search": {
+    "search_bar": {
+      "placeholder": "Search Movies, TV Shows and Celebrities"
+    }
+  }
+}

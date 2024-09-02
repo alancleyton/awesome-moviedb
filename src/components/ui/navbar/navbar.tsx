@@ -1,4 +1,5 @@
 import { Navbar as AweNavbar, Button } from '@alancleyton67/awesome-ui';
+import { useTranslation } from 'react-i18next';
 import * as MdIcon from 'react-icons/md';
 
 import { logoImages } from '@/constants/images';
@@ -20,6 +21,7 @@ export const Navbar = () => {
     isDrawerOpen,
     setDrawerOpen,
   } = useHeader();
+  const { t } = useTranslation();
 
   const toggleSearchBar = () => setSearchBarVisible(!isSearchBarVisible);
 
@@ -59,13 +61,19 @@ export const Navbar = () => {
           <AweNavbar.Nav collapse alignment="right">
             <AweNavbar.NavItems>
               <AweNavbar.NavItem>
-                <Button variant="secondary">Filmes</Button>
+                <Button variant="secondary">
+                  {t('header.navbar.items.0.text')}
+                </Button>
               </AweNavbar.NavItem>
               <AweNavbar.NavItem>
-                <Button variant="secondary">Programas de TV</Button>
+                <Button variant="secondary">
+                  {t('header.navbar.items.1.text')}
+                </Button>
               </AweNavbar.NavItem>
               <AweNavbar.NavItem>
-                <Button variant="secondary">Celebridades</Button>
+                <Button variant="secondary">
+                  {t('header.navbar.items.2.text')}
+                </Button>
               </AweNavbar.NavItem>
             </AweNavbar.NavItems>
           </AweNavbar.Nav>
@@ -81,7 +89,7 @@ export const Navbar = () => {
               <AweNavbar.NavItem>
                 <Button variant="secondary" onPress={toggleDrawer}>
                   <MdIcon.MdMenu size={24} />
-                  Menu
+                  {t('header.navbar.items.3.text')}
                 </Button>
               </AweNavbar.NavItem>
             </AweNavbar.NavItems>

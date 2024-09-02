@@ -1,64 +1,66 @@
 import * as MdIcon from 'react-icons/md';
 import { Button, Drawer } from '@alancleyton67/awesome-ui';
+import { useTranslation } from 'react-i18next';
 
 import { useHeader } from '@/components/ui/header';
 import { logoImages } from '@/constants/images';
 import { withResize, WithResizeProps } from '@/hoc/withResize';
 
-const SIDENAV_ITEMS = [
-  {
-    title: 'Séries',
-    icon: <MdIcon.MdTv className="mr-4" size={24} />,
-    links: [
-      {
-        name: 'Séries Populares',
-      },
-      {
-        name: 'Séries em exibição hoje',
-      },
-      {
-        name: 'Séries Na TV',
-      },
-      {
-        name: 'Séries mais bem avaliadas',
-      },
-    ],
-  },
-  {
-    title: 'Filmes',
-    icon: <MdIcon.MdLocalMovies className="mr-4" size={24} />,
-    links: [
-      {
-        name: 'Filmes Populares',
-      },
-      {
-        name: 'Filmes em cartaz',
-      },
-      {
-        name: 'Próximas estreias',
-      },
-      {
-        name: 'Filmes mais bem avaliados',
-      },
-    ],
-  },
-  {
-    title: 'Celebridades',
-    icon: <MdIcon.MdPeopleAlt className="mr-4" size={24} />,
-    links: [
-      {
-        name: 'Celebridades populares',
-      },
-      {
-        name: 'Celebridades nascidas hoje',
-      },
-    ],
-  },
-];
-
 const _Sidenav = ({ windowSize }: WithResizeProps) => {
   const drawerSize = windowSize && windowSize <= 768 ? 'sm' : 'full';
   const { isDrawerOpen, setDrawerOpen } = useHeader();
+  const { t } = useTranslation();
+
+  const SIDENAV_ITEMS = [
+    {
+      title: t('header.sidenav.items.0.title'),
+      icon: <MdIcon.MdTv className="mr-4" size={24} />,
+      links: [
+        {
+          name: t('header.sidenav.items.0.links.0.text'),
+        },
+        {
+          name: t('header.sidenav.items.0.links.1.text'),
+        },
+        {
+          name: t('header.sidenav.items.0.links.2.text'),
+        },
+        {
+          name: t('header.sidenav.items.0.links.3.text'),
+        },
+      ],
+    },
+    {
+      title: t('header.sidenav.items.1.title'),
+      icon: <MdIcon.MdLocalMovies className="mr-4" size={24} />,
+      links: [
+        {
+          name: t('header.sidenav.items.1.links.0.text'),
+        },
+        {
+          name: t('header.sidenav.items.1.links.1.text'),
+        },
+        {
+          name: t('header.sidenav.items.1.links.2.text'),
+        },
+        {
+          name: t('header.sidenav.items.1.links.3.text'),
+        },
+      ],
+    },
+    {
+      title: t('header.sidenav.items.2.title'),
+      icon: <MdIcon.MdPeopleAlt className="mr-4" size={24} />,
+      links: [
+        {
+          name: t('header.sidenav.items.2.links.0.text'),
+        },
+        {
+          name: t('header.sidenav.items.2.links.1.text'),
+        },
+      ],
+    },
+  ];
 
   const closeDrawer = () => setDrawerOpen(false);
 
