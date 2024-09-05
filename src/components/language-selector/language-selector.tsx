@@ -6,7 +6,6 @@ type Key = string | number;
 type Selection = 'all' | Iterable<Key>;
 
 const getMenuLabel = (value: string) => (value === 'pt' ? 'PT' : 'EN');
-const defaultLanguageValue = localStorage.getItem('amdb:lng') || 'pt';
 
 const MenuItemRadio = ({ isSelected = false }: { isSelected?: boolean }) => (
   <span className="flex items-center justify-center w-5 h-5 bg-transparent border border-solid border-gray-50 rounded-full">
@@ -16,7 +15,8 @@ const MenuItemRadio = ({ isSelected = false }: { isSelected?: boolean }) => (
   </span>
 );
 
-export const NavbarLanguageSelector = () => {
+export const LanguageSelector = () => {
+  const defaultLanguageValue = localStorage.getItem('amdb:lng') || 'pt';
   const [selectedLanguage, setSelectedLanguage] = useState<Selection>(
     new Set([defaultLanguageValue]),
   );

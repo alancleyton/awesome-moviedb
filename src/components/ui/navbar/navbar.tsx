@@ -5,7 +5,7 @@ import * as MdIcon from 'react-icons/md';
 import { logoImages } from '@/constants/images';
 import { useHeader } from '@/components/ui/header';
 
-import { NavbarLanguageSelector } from './navbar-language-selector';
+import { LanguageSelector } from '@/components/language-selector';
 
 const ToggleSearchBarButtonIcon = ({ isVisible }: { isVisible: boolean }) => {
   if (isVisible) {
@@ -49,7 +49,7 @@ export const Navbar = () => {
                 </Button>
               </AweNavbar.NavItem>
               <AweNavbar.NavItem>
-                <NavbarLanguageSelector />
+                <LanguageSelector />
               </AweNavbar.NavItem>
             </AweNavbar.NavItems>
           </AweNavbar.Nav>
