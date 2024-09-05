@@ -1,4 +1,4 @@
-import { screen, fireEvent, waitFor } from '@testing-library/react';
+import { screen, fireEvent, waitFor, cleanup } from '@testing-library/react';
 import { EnhancedStore } from '@reduxjs/toolkit';
 import { AxiosResponse } from 'axios';
 
@@ -15,12 +15,11 @@ describe('SearchBar', () => {
   let store: EnhancedStore<RootState>;
 
   beforeEach(() => {
+    jest.clearAllMocks();
     store = setupStore();
   });
 
-  afterEach(() => {
-    jest.resetAllMocks();
-  });
+  afterEach(cleanup);
 
   it('should render correctly', () => {
     const { container } = renderWithProviders(<SearchBar />, { store });

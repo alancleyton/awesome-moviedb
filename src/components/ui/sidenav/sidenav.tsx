@@ -1,72 +1,71 @@
 import * as MdIcon from 'react-icons/md';
 import { Button, Drawer } from '@alancleyton67/awesome-ui';
+import { useTranslation } from 'react-i18next';
 
+import { useHeader } from '@/components/ui/header';
 import { logoImages } from '@/constants/images';
 import { withResize, WithResizeProps } from '@/hoc/withResize';
 
-import { useHeader } from '.';
-
-type HeaderSidenavProps = WithResizeProps;
-
-const SIDENAV_ITEMS = [
-  {
-    title: 'Séries',
-    icon: <MdIcon.MdTv className="mr-4" size={24} />,
-    links: [
-      {
-        name: 'Séries Populares',
-      },
-      {
-        name: 'Séries em exibição hoje',
-      },
-      {
-        name: 'Séries Na TV',
-      },
-      {
-        name: 'Séries mais bem avaliadas',
-      },
-    ],
-  },
-  {
-    title: 'Filmes',
-    icon: <MdIcon.MdLocalMovies className="mr-4" size={24} />,
-    links: [
-      {
-        name: 'Filmes Populares',
-      },
-      {
-        name: 'Filmes em cartaz',
-      },
-      {
-        name: 'Próximas estreias',
-      },
-      {
-        name: 'Filmes mais bem avaliados',
-      },
-    ],
-  },
-  {
-    title: 'Celebridades',
-    icon: <MdIcon.MdPeopleAlt className="mr-4" size={24} />,
-    links: [
-      {
-        name: 'Celebridades populares',
-      },
-      {
-        name: 'Celebridades nascidas hoje',
-      },
-    ],
-  },
-];
-
-const _HeaderSidenav = ({ windowSize }: HeaderSidenavProps) => {
+const _Sidenav = ({ windowSize }: WithResizeProps) => {
   const drawerSize = windowSize && windowSize <= 768 ? 'sm' : 'full';
   const { isDrawerOpen, setDrawerOpen } = useHeader();
+  const { t } = useTranslation();
+
+  const SIDENAV_ITEMS = [
+    {
+      title: t('header.sidenav.items.0.title'),
+      icon: <MdIcon.MdTv className="mr-4" size={24} />,
+      links: [
+        {
+          name: t('header.sidenav.items.0.links.0.text'),
+        },
+        {
+          name: t('header.sidenav.items.0.links.1.text'),
+        },
+        {
+          name: t('header.sidenav.items.0.links.2.text'),
+        },
+        {
+          name: t('header.sidenav.items.0.links.3.text'),
+        },
+      ],
+    },
+    {
+      title: t('header.sidenav.items.1.title'),
+      icon: <MdIcon.MdLocalMovies className="mr-4" size={24} />,
+      links: [
+        {
+          name: t('header.sidenav.items.1.links.0.text'),
+        },
+        {
+          name: t('header.sidenav.items.1.links.1.text'),
+        },
+        {
+          name: t('header.sidenav.items.1.links.2.text'),
+        },
+        {
+          name: t('header.sidenav.items.1.links.3.text'),
+        },
+      ],
+    },
+    {
+      title: t('header.sidenav.items.2.title'),
+      icon: <MdIcon.MdPeopleAlt className="mr-4" size={24} />,
+      links: [
+        {
+          name: t('header.sidenav.items.2.links.0.text'),
+        },
+        {
+          name: t('header.sidenav.items.2.links.1.text'),
+        },
+      ],
+    },
+  ];
 
   const closeDrawer = () => setDrawerOpen(false);
 
   return (
-    <Drawer.Root
+    <Drawer
       open={isDrawerOpen}
       onClose={closeDrawer}
       placement="right"
@@ -74,11 +73,10 @@ const _HeaderSidenav = ({ windowSize }: HeaderSidenavProps) => {
     >
       <Drawer.Content>
         <aside
-          id="amdbHeaderSidenav"
-          className="amdb-header-sidenav w-full h-full bg-gray-90 overflow-auto"
+          id="amdbSidenav"
+          className="amdb-sidenav w-full h-full bg-gray-90 overflow-auto"
         >
           <div className="mx-auto w-full max-w-6xl py-8 px-4">
-            {/* sidenav header */}
             <div className="flex items-center">
               {windowSize && windowSize >= 768 && (
                 <a href="/" className="mr-auto">
@@ -97,7 +95,6 @@ const _HeaderSidenav = ({ windowSize }: HeaderSidenavProps) => {
               </Button>
             </div>
 
-            {/* sidenav items */}
             <div className="mt-7">
               <div className="flex items-start flex-wrap gap-10">
                 {SIDENAV_ITEMS.map(item => (
@@ -124,8 +121,8 @@ const _HeaderSidenav = ({ windowSize }: HeaderSidenavProps) => {
           </div>
         </aside>
       </Drawer.Content>
-    </Drawer.Root>
+    </Drawer>
   );
 };
 
-export const HeaderSidenav = withResize(_HeaderSidenav);
+export const Sidenav = withResize(_Sidenav);
