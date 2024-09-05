@@ -1,10 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import { Menu } from '@alancleyton67/awesome-ui';
 import { useTranslation } from 'react-i18next';
 
 type Key = string | number;
-
 type Selection = 'all' | Iterable<Key>;
+
+const getMenuLabel = (value: string) => (value === 'pt' ? 'PT' : 'EN');
+const defaultLanguageValue = localStorage.getItem('amdb:lng') || 'pt';
 
 const MenuItemRadio = ({ isSelected = false }: { isSelected?: boolean }) => (
   <span className="flex items-center justify-center w-5 h-5 bg-transparent border border-solid border-gray-50 rounded-full">
@@ -16,26 +18,35 @@ const MenuItemRadio = ({ isSelected = false }: { isSelected?: boolean }) => (
 
 export const NavbarLanguageSelector = () => {
   const [selectedLanguage, setSelectedLanguage] = useState<Selection>(
-    new Set(['pt']),
+    new Set([defaultLanguageValue]),
   );
+  const [selectedLanguageValue, setSelectedLanguageValue] =
+    useState(defaultLanguageValue);
   const { i18n } = useTranslation();
-  const selectedLanguageValue = [...selectedLanguage].join(', ');
-  const labelValue = selectedLanguageValue === 'pt' ? 'PT' : 'EN';
 
-  useEffect(() => {
-    i18n.changeLanguage(selectedLanguageValue);
-  }, [selectedLanguageValue, i18n]);
+  const menuLabel = useMemo(
+    () => getMenuLabel(selectedLanguageValue),
+    [selectedLanguageValue],
+  );
+
+  const onSelectLanguage = (key: Selection) => {
+    const keyValue = [...key].join(', ');
+    setSelectedLanguage(key);
+    setSelectedLanguageValue(keyValue);
+    localStorage.setItem('amdb:lng', keyValue);
+    i18n.changeLanguage(keyValue);
+  };
 
   return (
     <Menu
       id="amdbLanguageSelector"
       className="amdb-language-selector"
-      label={labelValue}
+      label={menuLabel}
       variant="secondary"
       selectionMode="single"
       selectedKeys={selectedLanguage}
-      defaultSelectedKeys={['pt']}
-      onSelectionChange={setSelectedLanguage}
+      defaultSelectedKeys={[defaultLanguageValue]}
+      onSelectionChange={onSelectLanguage}
     >
       <Menu.Item id="pt" className="flex items-center gap-3">
         {({ isSelected }) => (

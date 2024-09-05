@@ -6,8 +6,8 @@ import en from './locales/en/en.json';
 
 i18n.use(initReactI18next).init({
   debug: true,
-  lng: 'pt',
-  fallbackLng: 'en',
+  lng: localStorage.getItem('amdb:lng') || 'pt',
+  fallbackLng: localStorage.getItem('amdb:lng') || 'pt',
   interpolation: {
     escapeValue: false, // not needed for react as it escapes by default
   },
