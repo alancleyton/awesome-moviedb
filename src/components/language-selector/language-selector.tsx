@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 type Key = string | number;
 type Selection = 'all' | Iterable<Key>;
 
-const getMenuLabel = (value: string) => (value === 'pt' ? 'PT' : 'EN');
+const getMenuLabel = (value: string) => (value === 'pt-BR' ? 'PT' : 'EN');
 
 const MenuItemRadio = ({ isSelected = false }: { isSelected?: boolean }) => (
   <span className="flex items-center justify-center w-5 h-5 bg-transparent border border-solid border-gray-50 rounded-full">
@@ -16,7 +16,7 @@ const MenuItemRadio = ({ isSelected = false }: { isSelected?: boolean }) => (
 );
 
 export const LanguageSelector = () => {
-  const defaultLanguageValue = localStorage.getItem('amdb:lng') || 'pt';
+  const defaultLanguageValue = localStorage.getItem('amdb:lng') || 'pt-BR';
   const [selectedLanguage, setSelectedLanguage] = useState<Selection>(
     new Set([defaultLanguageValue]),
   );
@@ -48,7 +48,7 @@ export const LanguageSelector = () => {
       defaultSelectedKeys={[defaultLanguageValue]}
       onSelectionChange={onSelectLanguage}
     >
-      <Menu.Item id="pt" className="flex items-center gap-3">
+      <Menu.Item id="pt-BR" className="flex items-center gap-3">
         {({ isSelected }) => (
           <>
             <MenuItemRadio isSelected={isSelected} />
@@ -56,7 +56,7 @@ export const LanguageSelector = () => {
           </>
         )}
       </Menu.Item>
-      <Menu.Item id="en" className="flex items-center gap-3">
+      <Menu.Item id="en-US" className="flex items-center gap-3">
         {({ isSelected }) => (
           <>
             <MenuItemRadio isSelected={isSelected} />

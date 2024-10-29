@@ -28,10 +28,11 @@ function* fetchMovies(action: FetchMoviesPayloadAction) {
 function* searchMovies(action: SearchMoviesPayloadAction) {
   try {
     const { query } = action.payload;
+    const language = window.localStorage.getItem('amdb:lng');
 
     const { data } = yield call(
       getApi,
-      `/3/search/movie?language=pt-BR&query=${query}`,
+      `/3/search/movie?language=${language}&query=${query}`,
     );
 
     yield put(searchMoviesSuccess(data.results));
