@@ -28,8 +28,7 @@ function* fetchMovies(action: FetchMoviesPayloadAction) {
 function* searchMovies(action: SearchMoviesPayloadAction) {
   try {
     const { query } = action.payload;
-    const storageLanguage = window.localStorage.getItem('amdb:lng');
-    const language = storageLanguage === 'pt' ? 'pt-BR' : 'en-US';
+    const language = window.localStorage.getItem('amdb:lng');
 
     const { data } = yield call(
       getApi,

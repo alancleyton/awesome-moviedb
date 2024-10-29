@@ -30,13 +30,13 @@ describe('LanguageSelector', () => {
   });
 
   it('should render menu button with storage selected language', async () => {
-    localStorage.setItem('amdb:lng', 'en');
+    localStorage.setItem('amdb:lng', 'en-US');
 
     renderWithProviders(<LanguageSelector />);
 
     const menuButton = screen.getByRole('button', { name: /en/i });
 
-    expect(localStorage.getItem('amdb:lng')).toBe('en');
+    expect(localStorage.getItem('amdb:lng')).toBe('en-US');
     expect(menuButton).toBeInTheDocument();
   });
 });

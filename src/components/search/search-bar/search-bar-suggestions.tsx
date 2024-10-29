@@ -21,7 +21,9 @@ const MoviePost = ({ movie }: { movie: Movie }) => {
 export const SearchBarSuggestions = () => {
   const { isSearching, searchResult } = useAppSelector(state => state.movies);
   const movieYear = (date: string) => date.split('-')[0];
-  const storageLanguage = window.localStorage.getItem('amdb:lng');
+  const storageLanguage = window.localStorage
+    .getItem('amdb:lng')
+    ?.substring(0, 2);
 
   return (
     <Loader isLoading={isSearching}>
