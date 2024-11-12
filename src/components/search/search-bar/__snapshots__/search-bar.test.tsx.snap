@@ -18,10 +18,40 @@ exports[`SearchBar should render correctly 1`] = `
           class="a-input"
         >
           <div
-            class="a-input-group a-flex a-relative a-h-fit a-w-full a-input-group-element-right"
+            class="a-input-group a-flex a-relative a-h-fit a-w-full a-input-group-addon-left a-input-group-element-right"
           >
+            <div
+              class="a-input-left-addon a-inline-flex a-items-center a-px-4 a-ml-hr a-rounded-sm a-rounded-e-none a-outline-none a-ring-1 a-ring-transparent"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="true"
+                class="a-btn a-inline-flex a-items-center a-justify-center a-gap-3 a-font-sans a-font-medium a-leading-body a-text-center a-whitespace-nowrap a-transition a-duration-300 a-ease-in-out a-border a-border-solid a-border-transparent a-overflow-hidden focus:a-outline-none a-rounded-sm disabled:a-text-gray-30 disabled:a-bg-gray-10 disabled:a-border-gray-10 disabled:a-cursor-not-allowed a-btn-md a-py-3 a-px-6 a-text-md a-btn-card a-text-gray-90 a-bg-white a-border-gray-10 hover:a-bg-gray-10 hover:a-border-gray-10 focus:a-bg-gray-10 focus:a-border-gray-10 active:a-bg-gray-30 active:a-border-gray-30"
+                data-rac=""
+                id="react-aria-:r0:"
+                type="button"
+              >
+                <svg
+                  fill="currentColor"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 0h24v24H0z"
+                    fill="none"
+                  />
+                  <path
+                    d="M7 10l5 5 5-5z"
+                  />
+                </svg>
+              </button>
+            </div>
             <input
-              class="a-input-field a-inline-flex a-font-sans a-font-normal a-text-gray-90 placeholder:text-gray-60 a-text-ellipsis a-leading-body a-transition a-duration-300 a-ease-in-out a-outline-none a-rounded-sm a-ring-1 enabled:hover:a-ring-2 disabled:a-text-gray-30 disabled:a-ring-gray-10 disabled:a-cursor-not-allowed a-input-field-unstyled a-ring-transparent enabled:hover:a-ring-transparent enabled:focus:a-ring-0 enabled:focus:a-ring-transparent a-input-field-md a-h-8 a-py-3 a-px-5 a-text-md a-input-field-full a-w-full a-pr-8"
+              class="a-input-field a-inline-flex a-font-sans a-font-normal a-text-gray-90 placeholder:text-gray-60 a-text-ellipsis a-leading-body a-transition a-duration-300 a-ease-in-out a-outline-none a-rounded-sm a-ring-1 enabled:hover:a-ring-2 disabled:a-text-gray-30 disabled:a-ring-gray-10 disabled:a-cursor-not-allowed a-input-field-unstyled a-ring-transparent enabled:hover:a-ring-transparent enabled:focus:a-ring-0 enabled:focus:a-ring-transparent a-input-field-md a-h-8 a-py-3 a-px-5 a-text-md a-input-field-full a-w-full a-rounded-s-none a-pr-8"
               data-rac=""
               data-testid="searchField"
               id="searchField"
