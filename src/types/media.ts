@@ -1,4 +1,4 @@
-type MediTaype = 'movie' | 'tv' | 'person';
+type MediaType = 'movie' | 'tv' | 'person';
 
 export interface Media {
   adult: boolean;
@@ -19,6 +19,6 @@ export interface Media {
   name?: string;
   vote_average?: number;
   vote_count?: number;
-  media_type?: MediTaype;
+  media_type?: MediaType;
   known_for?: Media[];
 }
