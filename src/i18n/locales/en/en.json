@@ -69,6 +69,28 @@
   "search": {
     "search_bar": {
       "placeholder": "Search Movies, TV Shows and Celebrities"
+    },
+    "menu": {
+      "label": {
+        "multi": "All",
+        "movie": "Movies",
+        "tv": "Tv shows",
+        "person": "Celebrities"
+      },
+      "items": [
+        {
+          "text": "All"
+        },
+        {
+          "text": "Movies"
+        },
+        {
+          "text": "Tv Shows"
+        },
+        {
+          "text": "Celebrities"
+        }
+      ]
     }
   }
 }

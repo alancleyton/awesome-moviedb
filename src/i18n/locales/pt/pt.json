@@ -69,6 +69,28 @@
   "search": {
     "search_bar": {
       "placeholder": "Buscar Filmes, Séries e Celebridades"
+    },
+    "menu": {
+      "label": {
+        "multi": "Tudo",
+        "movie": "Filmes",
+        "tv": "Séries de tv",
+        "person": "Pessoas e celebridades"
+      },
+      "items": [
+        {
+          "text": "Tudo"
+        },
+        {
+          "text": "Filmes"
+        },
+        {
+          "text": "Séries de TV"
+        },
+        {
+          "text": "Pessoas e Celebridades"
+        }
+      ]
     }
   }
 }
