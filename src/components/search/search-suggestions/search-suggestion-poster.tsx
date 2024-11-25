@@ -9,9 +9,13 @@ interface SearchSuggestionPosterProps {
 }
 
 const POSTER_FALLBACK_ICON = {
-  movie: <MdIcon.MdMovie size={24} className="text-gray-10" />,
-  tv: <MdIcon.MdTv size={24} className="text-gray-10" />,
-  person: <MdIcon.MdPerson size={24} className="text-gray-10" />,
+  movie: (
+    <MdIcon.MdMovie size={24} className="text-gray-10" role="fallbackicon" />
+  ),
+  tv: <MdIcon.MdTv size={24} className="text-gray-10" role="fallbackicon" />,
+  person: (
+    <MdIcon.MdPerson size={24} className="text-gray-10" role="fallbackicon" />
+  ),
 };
 
 export const SearchSuggestionPoster = ({

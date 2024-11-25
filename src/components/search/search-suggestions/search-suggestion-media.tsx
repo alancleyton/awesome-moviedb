@@ -23,25 +23,28 @@ export const SearchSuggestionMedia = ({
 
   const personKnownForList = (knownFor: Media[] | undefined) => {
     if (knownFor?.length) {
-      return knownFor
-        .slice(0, 2)
-        .map((item, index) => (
-          <span
-            className={
-              knownFor?.length > 1 && index === 0
-                ? "after:content-[','] mr-2"
-                : ''
-            }
-          >
-            {item?.title || item?.name}
-          </span>
-        ));
+      return knownFor.slice(0, 2).map((item, index) => (
+        <span
+          key={item?.id}
+          className={
+            knownFor?.length > 1 && index === 0
+              ? "after:content-[','] mr-2"
+              : ''
+          }
+        >
+          {item?.title || item?.name}
+        </span>
+      ));
     }
     return [];
   };
 
   return (
-    <div id="searchSuggestionsMedia" className="block cursor-pointer ">
+    <div
+      id="searchSuggestionsMedia"
+      data-testid="searchSuggestionsMedia"
+      className="block cursor-pointer "
+    >
       <div className="mx-auto w-full max-w-6xl p-4 px-6">
         <div className="flex items-start">
           <div className="flex items-center justify-center h-10 min-w-9 bg-gray-40">
@@ -50,11 +53,14 @@ export const SearchSuggestionMedia = ({
           <div className="ml-3 w-full overflow-hidden">
             <h4 className="flex items-center font-roboto font-medium truncate text-lg text-gray-90">
               {media?.title || media?.name}&nbsp;
-              <small className="font-roboto font-normal text-md text-gray-50">
-                <When condition={showOriginalMediaNameOrTitle}>
+              <When condition={showOriginalMediaNameOrTitle}>
+                <small
+                  className="font-roboto font-normal text-md text-gray-50"
+                  role="subtitle"
+                >
                   ({media?.original_title || media?.original_name})
-                </When>
-              </small>
+                </small>
+              </When>
             </h4>
             <span className="block font-roboto font-normal text-md text-gray-50">
               <When condition={media?.known_for?.length}>

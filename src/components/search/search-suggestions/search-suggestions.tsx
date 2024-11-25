@@ -9,7 +9,7 @@ export const SearchSuggestions = () => {
 
   return (
     <Loader isLoading={isSearching}>
-      <ul id="searchSuggestions" role="listbox">
+      <ul id="searchSuggestions" data-testid="searchSuggestions" role="listbox">
         {searchResult.map((media, index) => (
           <li
             key={media.id + index}
