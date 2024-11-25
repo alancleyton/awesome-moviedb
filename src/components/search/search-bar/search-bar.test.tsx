@@ -54,7 +54,9 @@ describe('SearchBar', () => {
   it('should render search result when search is successfuly done', async () => {
     jest.spyOn(utilsApi, 'getApi').mockReturnValue(
       Promise.resolve({
-        data: searchResultMock,
+        data: {
+          results: searchResultMock,
+        },
       } as AxiosResponse),
     );
 
@@ -68,7 +70,7 @@ describe('SearchBar', () => {
         await flushPromises();
 
         expect(
-          screen.getAllByAltText(/Deadpool & Wolverine/i)[0],
+          screen.getAllByAltText(/Venom: Tempo de Carnificina/i)[0],
         ).toBeInTheDocument();
       },
       { timeout: 600 },
