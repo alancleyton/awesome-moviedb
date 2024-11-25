@@ -21,4 +21,6 @@ export interface Media {
   vote_count?: number;
   media_type?: MediaType;
   known_for?: Media[];
+  known_for_department?: string;
+  video?: boolean;
 }

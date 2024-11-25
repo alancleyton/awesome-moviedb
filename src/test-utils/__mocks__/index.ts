@@ -1,25 +1,128 @@
-export const searchResultMock = {
-  page: 1,
-  results: [
-    {
-      adult: false,
-      backdrop_path: '/9l1eZiJHmhr5jIlthMdJN5WYoff.jpg',
-      genre_ids: [28, 35, 878],
-      id: 533535,
-      original_language: 'en',
-      original_title: 'Deadpool & Wolverine',
-      overview:
-        'Um apático Wade Wilson trabalha duro na vida civil. Seus dias como mercenário moralmente flexível, Deadpool, ficou para trás. Quando seu planeta enfrenta uma ameaça, Wade deve relutantemente vestir-se novamente com um ainda mais relutante... relutante? Mais relutante? Ele deve convencer um Wolverine relutante em... Porra. As sinopses são tão estúpidas.',
-      popularity: 16433.882,
-      poster_path: '/qkhZRqCWqJ376sBzD4MeAO2w4wv.jpg',
-      release_date: '2024-07-24',
-      title: 'Deadpool & Wolverine',
-      video: false,
-      vote_average: 7.892,
-      vote_count: 1452,
-    },
-  ],
-};
+import { Media } from '@/types/media';
+
+export const searchResultMock = [
+  {
+    backdrop_path: '/vIgyYkXkg6NC2whRbYjBD7eb3Er.jpg',
+    id: 580489,
+    title: 'Venom: Tempo de Carnificina',
+    original_title: 'Venom: Let There Be Carnage',
+    overview:
+      'Em busca de seu próximo furo de reportagem, o jornalista Eddie Brock consegue uma entrevista exclusiva com Cletus Kasady, um assassino no corredor da morte, que descobre o segredo de Eddie e se torna o hospedeiro de Carnificina, um simbionte aterrorizante e ameaçador. Eddie e Venom precisam superar sua relação atribulada e trabalhar em conjunto para derrotar Carnificina.',
+    poster_path: '/h5UzYZquMwO9FVn15R2eK2itmHu.jpg',
+    media_type: 'movie',
+    adult: false,
+    original_language: 'en',
+    genre_ids: [878, 28, 12],
+    popularity: 495.28,
+    release_date: '2021-09-30',
+    video: false,
+    vote_average: 6.798,
+    vote_count: 10204,
+  },
+  {
+    backdrop_path: null,
+    id: 504284,
+    title: 'Carro',
+    original_title: 'Carro',
+    overview:
+      'An undocumented Brazilian immigrant living in the Boston area decides to buy a car in an effort to better his life before returning home.',
+    poster_path: '/3Ww0wNwgihuOEQasZLMLulrBXi7.jpg',
+    media_type: 'movie',
+    adult: false,
+    original_language: 'pt',
+    genre_ids: [18],
+    popularity: 0.367,
+    release_date: '2018-03-10',
+    video: false,
+    vote_average: 0.0,
+    vote_count: 0,
+  },
+  {
+    backdrop_path: null,
+    id: 1241824,
+    title: 'Carly',
+    original_title: 'Carly',
+    overview:
+      'In a dystopian world where the only thing that matters is your "likeability", how far would you go to protect the future of the ones you love? Perhaps a guest spot at a high ratings TV show? What could go wrong… Welcome to the Cupcake Factory!',
+    poster_path: null,
+    media_type: 'movie',
+    adult: false,
+    original_language: 'en',
+    genre_ids: [878],
+    popularity: 0.351,
+    release_date: '2023-10-13',
+    video: false,
+    vote_average: 0.0,
+    vote_count: 0,
+  },
+  {
+    id: 10959,
+    name: 'Shia LaBeouf',
+    original_name: 'Shia LaBeouf',
+    media_type: 'person',
+    adult: false,
+    popularity: 41.834,
+    gender: 2,
+    known_for_department: 'Acting',
+    profile_path: '/6JvHrMR4IYc8EMG0dJEigQNzbHU.jpg',
+    known_for: [
+      {
+        backdrop_path: '/1mBRoDVPPJ4T7bDleBBaYvGUYUc.jpg',
+        id: 1858,
+        title: 'Transformers',
+        original_title: 'Transformers',
+        overview:
+          'O destino da humanidade está em jogo quando duas raças de robôs, os Autobots e os vilões Decepticons, chegam à Terra. Os robôs possuem a capacidade de se transformarem em diferentes objetos mecânicos enquanto buscam a chave do poder supremo com a ajuda do jovem Sam.',
+        poster_path: '/ev7IMfMXRbddGLVw7xPL2PHpkWR.jpg',
+        media_type: 'movie',
+        adult: false,
+        original_language: 'en',
+        genre_ids: [12, 878, 28],
+        popularity: 24.542,
+        release_date: '2007-06-27',
+        video: false,
+        vote_average: 6.809,
+        vote_count: 11215,
+      },
+      {
+        backdrop_path: '/zbdoCe1meTyy0v1fsIxZ9Q0ef3H.jpg',
+        id: 8373,
+        title: 'Transformers: A Vingança dos Derrotados',
+        original_title: 'Transformers: Revenge of the Fallen',
+        overview:
+          "Passaram-se dois anos desde que Sam Witwicky e os Autobots salvaram a raça humana e tentam ter uma vida normal: Sam está começando a faculdade, enquanto os Autobots trabalham com uma organização militar secreta e tentam construir uma casa para eles na Terra. Porém, um antigo Decepticon conhecido como 'The Fallen' aparece para se vingar, então Sam e sua namorada Mikaela precisam desvendar a história dos Transformes e achar um caminho para derrotá-lo.",
+        poster_path: '/xggdkMUwiY4zwlSXbp7AqPxAvQt.jpg',
+        media_type: 'movie',
+        adult: false,
+        original_language: 'en',
+        genre_ids: [878, 28, 12],
+        popularity: 27.321,
+        release_date: '2009-06-19',
+        video: false,
+        vote_average: 6.195,
+        vote_count: 8456,
+      },
+      {
+        backdrop_path: '/k6gUa0v8dgYI79OrdiwKVW7AdzL.jpg',
+        id: 38356,
+        title: 'Transformers: O Lado Oculto da Lua',
+        original_title: 'Transformers: Dark of the Moon',
+        overview:
+          'Sam Witwicky e sua nova namorada, Carly, entram na briga quando os Decepticons renovam sua guerra contra os Autobots. Optimus Prime acredita que ressuscitar o antigo Transformer Sentinel Prime, ex-líder dos Autobots, pode levar à vitória. Essa decisão tem consequências devastadoras e a guerra parece pender a favor dos Decepticons, causando um conflito épico em Chicago.',
+        poster_path: '/1B1o592zAr0pny4qPGceT56Ug2m.jpg',
+        media_type: 'movie',
+        adult: false,
+        original_language: 'en',
+        genre_ids: [28, 878, 12],
+        popularity: 25.2,
+        release_date: '2011-06-28',
+        video: false,
+        vote_average: 6.207,
+        vote_count: 8265,
+      },
+    ],
+  },
+] as Media[];
 
 export const moviesMock = [
   {
@@ -39,7 +142,7 @@ export const moviesMock = [
     vote_average: 8,
     vote_count: 763,
   },
-];
+] as Media[];
 
 export const errorMock = {
   success: false,
