@@ -133,6 +133,10 @@
       "error", {
         "functions": "defaultArguments"
       }
-    ]
+    ],
+    "jsx-a11y/aria-role": [ 2, {
+      "allowedInvalidRoles": ["ícon", "subtitle"],
+      "ignoreNonDOM": true
+    }]
   }
 }
