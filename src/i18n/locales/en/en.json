@@ -68,14 +68,14 @@
   },
   "search": {
     "search_bar": {
-      "placeholder": "Search Movies, TV Shows and Celebrities"
+      "placeholder": "Search AMDB"
     },
     "menu": {
       "label": {
         "multi": "All",
         "movie": "Movies",
-        "tv": "Tv shows",
-        "person": "Celebrities"
+        "tv": "Tv Shows",
+        "person": "Celebs"
       },
       "items": [
         {
@@ -88,7 +88,7 @@
           "text": "Tv Shows"
         },
         {
-          "text": "Celebrities"
+          "text": "Celebs"
         }
       ]
     }

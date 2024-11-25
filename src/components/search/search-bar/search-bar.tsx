@@ -74,7 +74,7 @@ export const SearchBar = () => {
         <form action="/search">
           <Input isFull variant="unstyled">
             <Input.Group addonLeft elementRight>
-              <Input.LeftAddon>
+              <Input.LeftAddon className="p-0">
                 <Menu
                   id="searchCategorySelector"
                   isOpen={open}
@@ -84,7 +84,7 @@ export const SearchBar = () => {
                   defaultSelectedKeys={['multi']}
                   onSelectionChange={onSelectSearchCategory}
                   label={
-                    <Button variant="card">
+                    <Button variant="card" className="px-2 md:px-6">
                       {MENU_LABEL[searchCategory]}
                       {open ? (
                         <MdIcon.MdArrowDropUp size={24} />

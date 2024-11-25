@@ -21,12 +21,12 @@ exports[`SearchBar should render correctly 1`] = `
             class="a-input-group a-flex a-relative a-h-fit a-w-full a-input-group-addon-left a-input-group-element-right"
           >
             <div
-              class="a-input-left-addon a-inline-flex a-items-center a-px-4 a-ml-hr a-rounded-sm a-rounded-e-none a-outline-none a-ring-1 a-ring-transparent"
+              class="a-input-left-addon a-inline-flex a-items-center a-px-4 a-ml-hr a-rounded-sm a-rounded-e-none a-outline-none a-ring-1 a-ring-transparent p-0"
             >
               <button
                 aria-expanded="false"
                 aria-haspopup="true"
-                class="a-btn a-inline-flex a-items-center a-justify-center a-gap-3 a-font-sans a-font-medium a-leading-body a-text-center a-whitespace-nowrap a-transition a-duration-300 a-ease-in-out a-border a-border-solid a-border-transparent a-overflow-hidden focus:a-outline-none a-rounded-sm disabled:a-text-gray-30 disabled:a-bg-gray-10 disabled:a-border-gray-10 disabled:a-cursor-not-allowed a-btn-md a-py-3 a-px-6 a-text-md a-btn-card a-text-gray-90 a-bg-white a-border-gray-10 hover:a-bg-gray-10 hover:a-border-gray-10 focus:a-bg-gray-10 focus:a-border-gray-10 active:a-bg-gray-30 active:a-border-gray-30"
+                class="a-btn a-inline-flex a-items-center a-justify-center a-gap-3 a-font-sans a-font-medium a-leading-body a-text-center a-whitespace-nowrap a-transition a-duration-300 a-ease-in-out a-border a-border-solid a-border-transparent a-overflow-hidden focus:a-outline-none a-rounded-sm disabled:a-text-gray-30 disabled:a-bg-gray-10 disabled:a-border-gray-10 disabled:a-cursor-not-allowed a-btn-md a-py-3 a-px-6 a-text-md a-btn-card a-text-gray-90 a-bg-white a-border-gray-10 hover:a-bg-gray-10 hover:a-border-gray-10 focus:a-bg-gray-10 focus:a-border-gray-10 active:a-bg-gray-30 active:a-border-gray-30 px-2 md:px-6"
                 data-rac=""
                 id="react-aria-:r0:"
                 type="button"
