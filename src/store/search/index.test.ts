@@ -29,12 +29,12 @@ describe('Search store', () => {
       ...before,
       isSearching: false,
       searchCategory: 'multi',
-      searchResult: searchResultMock.results,
+      searchResult: searchResultMock,
     } as State;
 
     const state = searchReducer(
       before,
-      searchSuccess(searchResultMock.results, 'multi'),
+      searchSuccess(searchResultMock, 'multi'),
     );
 
     expect(state).toStrictEqual(after);
