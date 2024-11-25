@@ -68,7 +68,29 @@
   },
   "search": {
     "search_bar": {
-      "placeholder": "Buscar Filmes, Séries e Celebridades"
+      "placeholder": "Pesquisar no AMDB"
+    },
+    "menu": {
+      "label": {
+        "multi": "Tudo",
+        "movie": "Filmes",
+        "tv": "Séries",
+        "person": "Celebridades"
+      },
+      "items": [
+        {
+          "text": "Tudo"
+        },
+        {
+          "text": "Filmes"
+        },
+        {
+          "text": "Séries"
+        },
+        {
+          "text": "Celebridades"
+        }
+      ]
     }
   }
 }

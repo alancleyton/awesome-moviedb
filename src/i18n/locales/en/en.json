@@ -68,7 +68,29 @@
   },
   "search": {
     "search_bar": {
-      "placeholder": "Search Movies, TV Shows and Celebrities"
+      "placeholder": "Search AMDB"
+    },
+    "menu": {
+      "label": {
+        "multi": "All",
+        "movie": "Movies",
+        "tv": "Tv Shows",
+        "person": "Celebs"
+      },
+      "items": [
+        {
+          "text": "All"
+        },
+        {
+          "text": "Movies"
+        },
+        {
+          "text": "Tv Shows"
+        },
+        {
+          "text": "Celebs"
+        }
+      ]
     }
   }
 }
